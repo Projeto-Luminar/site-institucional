@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminar</title>
+    <link rel="stylesheet" href="./cadastro.css">
+</head>
+
+<body>
+    <!-- CONTEUDO -->
+    <div class="box_cad">
+        <div class="img_box">
+            <img src="./icones/Vector.png" alt="">
+        </div>
+        <div class="form_box">
+            <h2>Crie uma conta <b>Gratuita!</b></h2>
+            <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
+            <form action="#">
+                <div class="input_group w30">
+                    <label for="nome">Nome <b>*</b></label>
+                    <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
+                </div>
+                
+                <div class="input_group w50">
+                <label for="sobrenome">Sobrenome <b>*</b></label>
+                <input type="text" name="sobrenome" id="input_sobrenome"placeholder="Sobrenome">
+                </div>
+
+               <div class="input_group">
+                    <label for="email">E-mail <b>*</b></label>
+                    <input type="text" name="email" id="input_email" placeholder="name@example.com">
+                </div>
+
+                <div class="input_group">
+                    <label for="senha">Senha <b>*</b></label>
+                    <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                </div>
+
+                <div class="input_group">
+                    <button onclick="enviar()">
+                        Enviar
+                    </button>
+                </div>
+
+                <b>Sua melhor expêriencia começa aqui!</b>
+                <div class="moments">
+                    <p>Já tem uma conta? <a href="#">Faça login na Luminar</a></p>
+                </div>
+        </div>
+        </form>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function enviar(){
+        var nome = input_nome.value;
+        var sobrenome = input_sobrenome.value;
+        var email = input_email.value;
+        var senha = input_senha.value;
+
+
+        // Se os campos estão vazios
+        if (nome == "" || sobrenome == "" || email == "" || senha == ""){
+            alert("Preencha todos os campos!");
+        } else {
+            alert("Cadastro realizado com sucesso!");
+        }
+
+        // Se o email está correto (com "@" e se tem depois do "@" sptech.school)
+        //caso não precise de sptech.schol inserir email.indexOf(".") == -1
+        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1){
+            alert("Email inválido!");
+        } else {
+            alert("Email válido!");
+        }
+
+        // Se a senha tem mais de 8 caracteres
+        if (senha.length < 8){
+            alert("Senha muito curta!");
+        } else {
+            alert("Senha válida!");
+        }
+
+       
+    }
+</script>
