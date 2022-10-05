@@ -154,7 +154,7 @@ nav a:hover{
     justify-content: center;
     padding: 20px;
     min-height: 100vh;
-    background-color: #000e3e;
+    background-color: #000235;
 }
 
 .servicos{
@@ -163,11 +163,11 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000e3e;
+    background-color: #000235;
 }
 
 .titulo_servico p {
-    background-color: #000e3e;
+    background-color: #000235;
     justify-content: center;
     color: white;
     font-size: 24px;
@@ -176,7 +176,7 @@ nav a:hover{
 
 .titulo_servico b {
     color: #FFFA86;
-    background-color: #000e3e;
+    background-color: #000235;
 }
 
 /* pritmeiras imagens */
@@ -187,7 +187,7 @@ nav a:hover{
     flex-direction: column;
     align-items: center;
     width: 50%;
-    background-color: #000e3e;
+    background-color: #000235;
 }
 .caixa_servicos{
     background-color: #AAD8D8;
@@ -205,7 +205,7 @@ nav a:hover{
     justify-content: center;
     color: #ffff;
     font-size: 20px;
-    background-color: #000e3e;
+    background-color: #000235;
 }
 
 .produtos_servicos{
@@ -214,7 +214,7 @@ height: 50%;
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: #000e3e;
+background-color: #000235;
 margin-right: 50px;
 }
 
