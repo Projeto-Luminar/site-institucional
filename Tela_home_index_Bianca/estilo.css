@@ -10,7 +10,7 @@
 }
 
 .home-background{
-    background-image: url(/assets/background_home_maior2.png);
+    background-image: url(./assets/background_home_maior2.png);
     background-size: cover;
     padding: 30px 200px;
     height:700px
