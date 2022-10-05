@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #000e3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    padding: 15px 0;
+    background-color:#000;
+    border-bottom: 3px solid #32b9cd;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.titulo {
+    color: #32b9cd;
+    font-size: 14px;
+}
+
+.navegacao {
+    width: 350px;
+    color: #efb661;
+}
+
+.navegacao a {
+    color:#efb661;
+    text-decoration: none;
+}
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navegacao ul li {
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.agora {
+    font-weight: bold;
+}
+
+/* .box_login {
+    background-color: white;
+    padding: 0px 40px;
+    width: 60%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+} */
+
+.box_login {
+    display: flex;
+    width: 700px;
+}
+
+.div_img {
+    background-color: white;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 20px 0 0 20px;
+}
+
+.div_img img {
+    width: 100%;
+}
+
+.div_forms {
+    background-color: white;
+    padding: 0px 40px;
+    width: 60%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+}
+
+.div_forms h2 {
+    font-size: 23px;
+    padding-top: 25px;
+}
+
+.div_forms h4{
+    padding-top: 5px;
+    padding-bottom: 8px;
+    font-size: 15px;
+}
+
+.div_forms b {
+    color: #D9A557;
+}
+
+.div_email_senha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.div_forms .div_email_senha label {
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+    padding-bottom:0px;
+    padding-top: 5px;
+    display: block;
+}
+
+.div_forms .div_email_senha input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    text-align: center;
+    outline: none;
+    width: 100%;
+    justify-content: center;
+}
+
+.button_login {
+    width: 100%;
+    height: 47px;
+    background: #0461CF;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 13px;
+    color: white;
+}
+
+.amarelo {
+    color: #D9A557;
+}
+
+.div_rodape {
+    display: flex;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 10px;
+}
+
+.div_rodape a {
+    text-decoration: none;
+    color: #0461CF;
+}

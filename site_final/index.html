@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icones/luz.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Luminar</title>
+</head>
+<body>
+    <section class="home-background">
+        <header>
+            <div class="logo-luminar">
+                <img src="./assets/logoLuminar.png" alt="Logo Luminar" width="200px"/>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                  </ul>
+            </nav>
+            <div class="btn-login-cadastro">
+                <a href="./login/login.html" class="btn-login">Fazer Login</a>
+                <a href="./cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
+            </div>
+        </header>
+        <main>
+            <div class="conteudo">
+                <div class="frase-impacto">
+                    <p>A iluminação do seu escritório call center importa!</p>
+                </div>
+                <div class="frase-chamativo">
+                    <p>Descubra como aumentar a <b>produtividade</b> e o <b>bem-estar</b> dos seus funcionários com a <b>Luminar!</b></p>
+                </div>
+                <div class="btn-confira">
+                    <a href="#">Confira<span>><span></a>
+                </div>
+            </div>
+        </main>
+    </section>
+
+<!--daqui para baixo é a parte de serviços-->
+    <section class="divisao_sericos">
+        <div class="divisao">Você sabia que a iluminação inadequada pode causar baixo rendimento, problemas de visão, <br> cansaço e acidentes no trabalho?</div>
+    </section>
+<div class="div_servicos">
+    <div class="servicos">
+        <div class="titulo_servico">
+            <p>Por isso a Luminar criou um <b> sistema de monitoramento de iluminação </b> para a sua empresa de call
+                center!</p>
+        </div>
+        <div class="funcionalidades">
+            <p>
+                Com a luminar, você pode:
+            </p>
+            <div class="caixa_servicos">
+                 <img src="./servicos/img1.png" alt="">
+                     Aumentar a produtividade de seus funcionarios 
+                </div>
+                
+
+                <div class="caixa_servicos">
+                    <img src="./servicos/img2.png" alt="">
+                    Promover o bem estar
+                </div>
+                <div class="caixa_servicos">
+                    <img src="./servicos/img3.png" alt="">
+                    Reduzir perdas financeiras
+                </div>
+                <div class="caixa_servicos">
+                    <img src="./servicos/img4.png" alt="">
+                    Melhorar a imagem da sua empresa
+                </div>
+            </div>
+        </div>
+            <div>
+                <div class="produtos_servicos">
+                    <div class="img2"><img src="./servicos/dashboard_img_ficticia.png" alt=""></div>
+                    <div class="monitoramento">
+                        Monitore a iluminação dos escritórios sem dificuldade <br>
+                        <p>Ficou interresado(a)?!</p>
+                    </div>
+                    <button>
+                        SIMULE AGORA <span>></span>
+                    </button>
+
+                </div>
+            </div>
+    </div>
+
+    <!--daqui para baixo é a parte sobre nós-->
+    <div class="sobrenos">
+        <div class="container_sobrenos">
+            <div class="caixas_sobrenos">
+                <div class="caixa_sobrenos">
+                    <img src="./icones/icone_missão.png" alt="icone de missão da Luminnar"/>
+                    <h3>Missão</h3>
+                    <p>A luz para o seu negócio!</p>
+                </div>
+                <div class="caixa_sobrenos">
+                    <img src="./icones/icone_valores.png" alt="icone da visão da Luminnar"/>
+                    <h3>Visão</h3>
+                    <p>O ambiante adequado faz toda a diferença!</p>
+                </div>
+                <div class="caixa_sobrenos">
+                    <img src="./icones/icone_visao.png" alt="icone dos valores da Luminnar"/>
+                    <h3>Valores</h3>
+                    <p>Inovação com tecnologia!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--daqui para baixo é o footer-->
+    <footer>
+        <div class="container_footer">
+            <!-- onde ira ficar os dois quadrado -->
+            <div class="container_central">
+                <!-- quadrado em cima -->
+                <div class="contatos">
+                    <!-- area onde vai ficar o texto contato -->
+                    <div class="contatos_inputs">
+                        <h1 class="titulo_footer">Contato</h1>
+                        <!-- aqui onde ficarao as inputs e o comentario -->
+                        <div class="textos">
+                            <p>Entre em contato e saiba como os nossos especialistas podem ajudar o seu negócio!
+                                Responderemos em até 24 horas!</p>
+                            <div class="campo">
+                                <label for="empresa"> Empresa</label>
+                                <input style="opacity: 0.7;" type="empresa" name="empresa" id="empresa">
+                            </div>
+                            <div class="campo">
+                                <label for="email"> Email</label>
+                                <input type="email" name="email" id="email_validar">
+                                <span id="texto_email"></span>
+                            </div>
+                            <div class="campo3">
+                                <label for="Assunto"> Assunto</label>
+                                <input class="input3" type="Assunto" name="Assunto" id="Assunto" placeholder="">
+                            </div>
+                            <button onclick="validar()">Enviar</button>
+                        </div>
+                    </div>
+                    <div class="contatos_email">
+                        <P>Caso preferir, entre <br> em contato conosco <br> por meio destes <br> canais: </P>
+                        <span class="span_contato">
+                            Séde:<br>+55 (11) 9550-0000
+                        </span>
+                        <span class="span_contato">
+                            E-mail: <br>luminar@gmail.com
+                        </span>
+                    </div>
+                </div>
+                <!-- quadrado baixo -->
+                <div class="nota">
+                    <div class="nota_texto">
+                        <h3> Avalie nosso serviço!</h3>
+                        <p>
+                            De uma escala de 0 a 5 o quanto você recomendaria o serviço da Luminar para uma empresa?
+                        </p>
+                    </div>
+                    <div class="nota_estrela">
+                        <div class="imagens_footer">
+                            <img class=estrela1 id="estrela1a" onclick="estrela1()" src="./icones/estrelas/estrela (1) 7.png" alt="">
+                            <img class=estrela2 id="estrela2a" onclick="estrela2()" src="./icones/estrelas/estrela (1) 7.png" alt="">
+                            <img class=estrela3 id="estrela3a" onclick="estrela3()" src="./icones/estrelas/estrela (1) 7.png" alt="">
+                            <img class=estrela2 id="estrela4a" onclick="estrela4()" src="./icones/estrelas/estrela (1) 7.png" alt="">
+                            <img class=estrela1 id="estrela5a" onclick="estrela5()" src="./icones/estrelas/estrela (1) 7.png" alt="">
+                        </div>
+                        <div class="notas_site">
+                            <H1>NOTA: <span id="mudar_verde">0.0</span> </H1>
+                        </div>
+                        <!-- <img src="../ant-design_star-filled.png" alt=""> -->
+                    </div>
+                    <div class="simbolo">
+                        Todos os direitos reservados&copy; para Luminar
+                    </div>
+                </div> <br>
+            </div> <br>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    function validar() {
+        var email_valida = email_validar.value
+        email_valida.replace(" ","")
+        
+        if (email_valida.length < 10) {
+            alert(`Número de caracteres insuficiêntes`)
+        }
+        else if (email_valida.indexOf("@") < 0) {
+            alert(`E-mail inválido`)
+        } 
+        else if (email_valida.endsWith('@sptech.school')== false 
+        && email_valida.endsWith('@gmail.com') == false && email_valida.endsWith('@hotmail.com')== false && email_valida.endsWith('@outlook.com') == false&& email_valida.endsWith('@bandtec.com.br')== false && email_valida.endsWith('@microsoft.com') == false)
+         {
+            alert(`Insira um e-mail valido`)
+        }
+        else{
+            texto_email.innerHTML = 'ok'
+            texto_email.style.color = 'green'
+        }
+
+    }
+    function estrela1() {
+        estrela1a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela2a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela3a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela4a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela5a.src = "./icones/estrelas/estrela (1) 7.png";
+        mudar_verde.innerHTML = "1.0"
+        mudar_verde.style.color = "red"
+    }
+    function estrela2() {
+        estrela1a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela2a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela3a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela4a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela5a.src = "./icones/estrelas/estrela (1) 7.png";
+        mudar_verde.innerHTML = "2.0"
+        mudar_verde.style.color = "red"
+    }
+    function estrela3() {
+        estrela1a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela2a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela3a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela4a.src = "./icones/estrelas/estrela (1) 7.png";
+        estrela5a.src = "./icones/estrelas/estrela (1) 7.png";
+        mudar_verde.innerHTML = "3.0"
+        mudar_verde.style.color = "yellow"
+    }
+    function estrela4() {
+        estrela1a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela2a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela3a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela4a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela5a.src = "./icones/estrelas/estrela (1) 7.png";
+
+        mudar_verde.style.color = "aqua"
+        mudar_verde.innerHTML = "4.0"
+    }
+    function estrela5() {
+        estrela1a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela2a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela3a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela4a.src = "./icones/estrelas/ant-design_star-filled.png";
+        estrela5a.src = "./icones/estrelas/ant-design_star-filled.png";
+        mudar_verde.innerHTML = "5.0"
+        mudar_verde.style.color = "green"
+    }
+
+</script>
