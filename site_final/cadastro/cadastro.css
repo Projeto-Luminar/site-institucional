@@ -22,19 +22,18 @@ body {
 .w30{ 
     height: 0px;
     width: 100%;
-    float: right;
     padding-right: 150px;
 }
 .w50{ 
     width: 100%;
-    float: left;
     padding-left: 135px;
     padding-bottom: 5px;
 }
 
 .box_cad {
     display: flex;
-    width: 700px;
+    /* width: 700px; */
+    width: 60%;
 }
 
 .img_box {
@@ -85,11 +84,6 @@ body {
 .form_box form {
     margin: 20px 0;
 }
-.input_group {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-}
 
 .form_box .input_group label {
     font-weight: bold;
@@ -108,6 +102,12 @@ body {
     outline: none;
     width: 100%;
     justify-content: center;
+}
+
+.frase-experiencia{
+    margin-top: 30px;
+    color:#D9A557;
+    font-weight: bold;
 }
 
 button {

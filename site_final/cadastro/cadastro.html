@@ -21,22 +21,22 @@
             <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
             <form action="#">
                 <div class="input_group w30">
-                    <label for="nome">Nome <b>*</b></label>
+                    <label for="input_nome">Nome <b>*</b></label>
                     <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
                 </div>
-                
+
                 <div class="input_group w50">
-                <label for="sobrenome">Sobrenome <b>*</b></label>
-                <input type="text" name="sobrenome" id="input_sobrenome"placeholder="Sobrenome">
+                    <label for="input_sobrenome">Sobrenome <b>*</b></label>
+                    <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
                 </div>
 
-               <div class="input_group">
-                    <label for="email">E-mail <b>*</b></label>
+                <div class="input_group">
+                    <label for="input_email">E-mail <b>*</b></label>
                     <input type="text" name="email" id="input_email" placeholder="name@example.com">
                 </div>
 
                 <div class="input_group">
-                    <label for="senha">Senha <b>*</b></label>
+                    <label for="input_senha">Senha <b>*</b></label>
                     <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
                 </div>
 
@@ -46,7 +46,7 @@
                     </button>
                 </div>
 
-                <b>Sua melhor expêriencia começa aqui!</b>
+                <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
                 <div class="moments">
                     <p>Já tem uma conta? <a href="#">Faça login na Luminar</a></p>
                 </div>
@@ -61,7 +61,7 @@
 </html>
 
 <script>
-    function enviar(){
+    function enviar() {
         var nome = input_nome.value;
         var sobrenome = input_sobrenome.value;
         var email = input_email.value;
@@ -69,7 +69,7 @@
 
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == ""){
+        if (nome == "" || sobrenome == "" || email == "" || senha == "") {
             alert("Preencha todos os campos!");
         } else {
             alert("Cadastro realizado com sucesso!");
@@ -77,19 +77,19 @@
 
         // Se o email está correto (com "@" e se tem depois do "@" sptech.school)
         //caso não precise de sptech.schol inserir email.indexOf(".") == -1
-        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1){
+        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
             alert("Email inválido!");
         } else {
             alert("Email válido!");
         }
 
         // Se a senha tem mais de 8 caracteres
-        if (senha.length < 8){
+        if (senha.length < 8) {
             alert("Senha muito curta!");
         } else {
             alert("Senha válida!");
         }
 
-       
+
     }
 </script>
