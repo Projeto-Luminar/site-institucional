@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- <header>
+        <div class="container">
+            <div class="titulo">
+                <h1>Luminar</h1>
+            </div>
+                
+            <div class="navegacao">
+                <ul>
+                    <li onclick="home()">Home</li>
+                    <li onclick="servico()">Serviços</li>
+                    <li onclick="sobre_nos()">Sobre Nós</li>
+                    <li onclick="fale_conosco()">Fale Conosco</li>
+                    <li>|</li>
+                    <li class="agora" onclick="fazer_login()">Fazer Login</li>
+                    <li onclick="cadastre_se()">Cadastre-se</li>
+                </ul>
+            </div>
+        </div>
+    </header> -->
+    <div id="box_login" class="box_login">
+        <div id="div_img" class="div_img">
+            <img src="./img/Vector.png" alt="">
+        </div>
+        <div id="div_forms" class="div_forms">
+            <h2>Entre na sua conta ou <b>cadastre-se!</b></h2>
+            <h4>Preencha os campos abaixo para fazer o login!</h4><br><br>
+            <div id="div_email" class="div_email_senha">
+                <label for="email">E-mail:</label>
+                <input type="text" id="input_email" name="email">
+            </div>
+            <div id="div_senha" class="div_email_senha">
+                <label for="senha"> Senha:</label>
+                <input type="password" id="input_senha" name="senha">
+            </div>
+            <button onclick="enviar()" class="button_login">Enviar</button><br><br>
+
+            <h4 class="amarelo">Deslogue do passado, e logue para o futuro!</h4>
+            <div class="div_rodape">
+                <p>Já tem conta? <a onclick="faca_login()"> Faça login na Luminar</a></p>
+            </div>
+            <div class="div_rodape">
+                <p>Esqueceu a senha? <a onclick="clique_aqui()"> Clique aqui</a></p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function enviar() {
+        var e_mail = input_email.value;
+        var senha = input_senha.value;
+        if (e_mail == "luminar@sptech.school" && senha == "luminarzic@"){
+            alert("Bem-Vindo!")
+            
+        }else {
+            alert("E-mail ou Senha inválida")
+        } 
+    }
+    function home() {
+        alert("Página inicial")
+    }
+    function servico() {
+        alert("Serviços")
+    }
+    function sobre_nos() {
+        alert("Sobre a Luminar")
+    }
+    function fale_conosco() {
+        alert("Fale Conosco")                           
+    }
+    function fazer_login() {
+        alert("Faça o Login")
+    }
+    function cadastre_se() {
+        alert("Cadastre-se")
+    } 
+    function faca_login() {
+        alert("Faça o Login")
+    }
+    function clique_aqui() {
+        alert("Altere sua senha")
+    } 
+    
+    </script>
