@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ptbr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Luminar - Dashboard</title>
 </head>
 
@@ -56,8 +57,148 @@
         </div>
     </div>
     <div class="dashboards">
-
+        <div class="kpis"></div>
+        <div class="graficos">
+            <div class="div_chart01">
+                <div class="chart01">
+                    <canvas id="myChart1"></canvas>
+                </div>
+                <div class="chart02">
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+            <div class="div_chart02">
+                <div class="chart03">
+                    <canvas id="myChart3"></canvas>
+                </div>
+                <div class="chart04">
+                    <canvas id="myChart4"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
+<script>
+      const labels = [
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Lux',
+      backgroundColor: '#FFFA86',
+      borderColor: '#FFFA86',
+      data: [100, 500, 480, 900, 750, 350 ],
+    }]
+  };
+
+  const config1 = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart1'),
+    config1
+  );
+
+  const labels2 = [
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ];
+
+  const data2 = {
+    labels: labels2,
+    datasets: [{
+      label: 'Lux',
+      backgroundColor: '#FFFA86',
+      borderColor: '#FFFA86',
+      data: [100, 500, 480, 900, 750, 350 ],
+    }]
+  };
+
+  const config2 = {
+    type: 'line',
+    data: data2,
+    options: {}
+  };
+
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  );
+
+  const labels3 = [
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ];
+
+  const data3 = {
+    labels: labels3,
+    datasets: [{
+      label: 'Lux',
+      backgroundColor: '#FFFA86',
+      borderColor: '#FFFA86',
+      data: [100, 500, 480, 900, 750, 350 ],
+    }]
+  };
+
+  const config3 = {
+    type: 'line',
+    data: data3,
+    options: {}
+  };
+
+  const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+  );
+
+  const labels4 = [
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+  ];
+
+  const data4 = {
+    labels: labels3,
+    datasets: [{
+      label: 'Lux',
+      backgroundColor: '#FFFA86',
+      borderColor: '#FFFA86',
+      data: [100, 500, 480, 900, 750, 350 ],
+    }]
+  };
+
+  const config4 = {
+    type: 'line',
+    data: data4,
+    options: {}
+  };
+  
+  const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+  );
+</script>
 
 </html>
