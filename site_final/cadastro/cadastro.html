@@ -71,23 +71,20 @@
         // Se os campos estão vazios
         if (nome == "" || sobrenome == "" || email == "" || senha == "") {
             alert("Preencha todos os campos!");
-        } else {
-            alert("Cadastro realizado com sucesso!");
         }
-
-        // Se o email está correto (com "@" e se tem depois do "@" sptech.school)
-        //caso não precise de sptech.schol inserir email.indexOf(".") == -1
-        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+         
+       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
             alert("Email inválido!");
-        } else {
-            alert("Email válido!");
+            alert("senha muito curta");
         }
 
-        // Se a senha tem mais de 8 caracteres
-        if (senha.length < 8) {
+       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+            alert("Email inválido ");
+        }
+        else if((senha.length < 8)) {
             alert("Senha muito curta!");
-        } else {
-            alert("Senha válida!");
+        }else {
+            alert("Cadastro realizado com sucesso!");
         }
 
 
