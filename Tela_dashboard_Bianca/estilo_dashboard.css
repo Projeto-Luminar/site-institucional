@@ -168,48 +168,20 @@
      }
 
     .graficos{
-        height: 85%;
+        height: 80%;
         display: flex;
         flex-direction: column;
     }
 
     .div_chart01{
-        height: 50%;
+        height: 100%;
         display: flex;
-        justify-content: space-around;
-        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
     }
 
     .chart01{
-        height: 31vh;
-        width: 30vw;
-        margin-right: 10px;
-        background-color: white;
-    }
-
-    .chart02{
-        height: 31vh;
-        width: 30vw;
-        margin-right: 10px;
-        background-color: white;
-    }
-
-    .div_chart02{
-        height: 50%;
-        display: flex;
-        justify-content: space-around;
-    } 
-
-    .chart03{
-        height: 31vh;
-        width: 30vw;
-        margin-right: 10px;
-        background-color: white;
-    }
-
-    .chart04{
-        height: 31vh;
-        width: 30vw;
-        margin-right: 10px;
+        height: 63vh;
+        width: 60vw;
         background-color: white;
     }

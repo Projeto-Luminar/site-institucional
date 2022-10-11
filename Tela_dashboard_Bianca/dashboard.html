@@ -92,19 +92,10 @@
         </div>
         <div class="graficos">
             <div class="div_chart01">
-                <div class="chart01">
-                    <canvas id="myChart1"></canvas>
-                </div>
-                <div class="chart02">
-                    <canvas id="myChart2"></canvas>
-                </div>
+              <div class="chart01">
+              <canvas id="myChart1"></canvas>
+              </div>
             </div>
-            <div class="div_chart02">
-                <div class="chart03">
-                    <canvas id="myChart3"></canvas>
-                </div>
-                <div class="chart04">
-                    <canvas id="myChart4"></canvas>
                 </div>
             </div>
         </div>
@@ -124,11 +115,30 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Luminosidade',
+      label: 'Luminosidade | Sensor 1',
       backgroundColor: 'red',
       borderColor: '#FF1616',
-      data: [100, 500, 480, 900, 750, 350 ],
-    }]
+      data: [100, 500, 480, 800, 750, 350 ],
+    },
+    {
+      label: 'Luminosidade| Sensor 2',
+      backgroundColor: '#0000FF',
+      borderColor: '#0000FF',
+      data: [200, 300, 200, 400, 430, 250 ],
+    },
+    {
+      label: 'Luminosidade| Sensor 3',
+      backgroundColor: '#008000',
+      borderColor: '#008000',
+      data: [300, 400, 100, 700, 550, 300 ],
+    },
+    {
+      label: 'Luminosidade| Sensor 4',
+      backgroundColor: '#FFFF00',
+      borderColor: '#FFFF00',
+      data: [300, 200, 300, 200, 200, 200 ],
+    }
+  ]
   };
 
   const config1 = {
@@ -142,95 +152,6 @@
     config1
   );
 
-  const labels2 = [
-    '10:00',
-    '10:30',
-    '11:00',
-    '11:30',
-    '12:00',
-    '12:30',
-  ];
-
-  const data2 = {
-    labels: labels2,
-    datasets: [{
-      label: 'Luminosidade',
-      backgroundColor: '#FF1616',
-      borderColor: 'blue',
-      data: [100, 500, 480, 900, 750, 350 ],
-    }]
-  };
-
-  const config2 = {
-    type: 'line',
-    data: data2,
-    options: {}
-  };
-
-  const myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    config2
-  );
-
-  const labels3 = [
-    '10:00',
-    '10:30',
-    '11:00',
-    '11:30',
-    '12:00',
-    '12:30',
-  ];
-
-  const data3 = {
-    labels: labels3,
-    datasets: [{
-      label: 'Luminosidade',
-      backgroundColor: '#FF1616',
-      borderColor: 'yellow',
-      data: [100, 500, 480, 900, 750, 350 ],
-    }]
-  };
-
-  const config3 = {
-    type: 'line',
-    data: data3,
-    options: {}
-  };
-
-  const myChart3 = new Chart(
-    document.getElementById('myChart3'),
-    config3
-  );
-
-  const labels4 = [
-    '10:00',
-    '10:30',
-    '11:00',
-    '11:30',
-    '12:00',
-    '12:30',
-  ];
-
-  const data4 = {
-    labels: labels3,
-    datasets: [{
-      label: 'Luminosidade',
-      backgroundColor: '#ff1616',
-      borderColor: 'green',
-      data: [100, 500, 480, 900, 750, 350 ],
-    }]
-  };
-
-  const config4 = {
-    type: 'line',
-    data: data4,
-    options: {}
-  };
-  
-  const myChart4 = new Chart(
-    document.getElementById('myChart4'),
-    config4
-  );
 </script>
 
 </html>
