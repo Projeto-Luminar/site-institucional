@@ -65,7 +65,7 @@ body {
 .form_box h4{
     padding-top: 5px;
     padding-bottom: 8px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .form_box b {
@@ -117,7 +117,7 @@ button {
     border-radius: 20px;
     outline: none;
     border: none;
-    margin-top: 13px;
+    margin-top: 20px;
     color: white;
 }
 
