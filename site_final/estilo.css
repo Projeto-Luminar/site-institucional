@@ -19,30 +19,47 @@ body{
 
 .home-background{
     background-image: url(./assets/background_home_maior2.png);
+    padding: 16px 130px;
     background-size: cover;
-    padding: 30px 200px;
-    height:700px
+    height:700px;
 }
 
 header{
+    z-index: 30;
+    position: fixed;   
+    width: 100%;
+    padding-bottom: 0;
+    text-align: center;
+    background-color:#000117;
+}
+
+.linha-header{
+    margin: 0;
+    height: 4px;
+    background-color: #8181D7;
+}
+
+.header-luminar{
     display: flex;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
+    padding: 10px 100px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo-luminar{
-    margin-right: 20px;
+    width: 20%;
 }
 
 nav{
     font-family: 'Roboto', sans-serif;
-    margin: 0 8%;
+    margin: 0 10%;
     width: 60%;
-    margin-top: 2.8%;
+    margin-top: 1.5%;
 }
+
 
 nav ul{
     display: flex;
@@ -66,16 +83,20 @@ nav a:hover{
 
 .btn-login-cadastro{
     display: flex;
-    flex-direction: column;
-    width: 15%;
+    flex-direction: row;
+    width: 20%;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 12px;
 }
 
 .btn-login{
+    margin-right: 10px;
     display: inline-block;
     border: solid 3px #AAD8D8;
     padding: 1px;
     width: 110px;
-    font-size: 13px;
+    font-size: 15px;
     border-radius: 50px;
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
@@ -84,7 +105,6 @@ nav a:hover{
 }
 
 .btn-cadastro{
-    margin-top: 8px;
     display: inline-block;
     background-color: #FFFA86;
     border: solid 3px #FFFA86;
@@ -99,7 +119,7 @@ nav a:hover{
 }
 
 .conteudo{
-    margin: 80px 0;
+    margin: 140px 0;
     width: 60%;
     color: #FAF9FF;
     display: flex;
@@ -148,7 +168,7 @@ nav a:hover{
     flex-direction: column;
     align-items: center;
     background: #000e3e;
-    padding-bottom: 70px;
+    padding-bottom: 90px;
 }
 
 .texto-intro-servico{
@@ -156,26 +176,26 @@ nav a:hover{
     background-color: #FAF9FF;
     width: 100%;
     text-align: center;
-    padding: 2% 18%;
+    padding: 2% 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .servicos_funcionalidades{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin: 0px 20px;
+    margin: 0px 30px;
 
 }
 
 .titulo_servico p {
     justify-content: center;
     color: white;
-    font-size: 25px;
-    padding: 30px 15%;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    font-size: 20px;
+    padding: 30px;
+    margin-top: 3px;
+    margin-bottom: 20px;
     width: 100%;
     text-align: center;
 }
@@ -192,16 +212,16 @@ nav a:hover{
     flex-direction: column;
 }
 .caixa{
-    padding: 5px 5px;
+    padding: 2px 2px;
     width: 100%;
     align-items: center;
     border-radius: 0 100px 100px 0;
     overflow: hidden;
     display: flex;
-    margin: 2px 30px;
+    margin: 1px 50px;
     font-family: 'Concert One', cursive;
     color: #000235;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .caixa img{
@@ -211,10 +231,10 @@ nav a:hover{
 
 .fundo_azul {
     background-color: #AAD8D8;
-    height: 80px;
+    height: 60px;
     width: 100%;
     max-width: 450px;
-    margin: auto 0 auto -50px;
+    margin: auto 100px auto -50px;
     padding: 18px 20px;
     border-radius: 50px;
     text-align: center;
@@ -224,7 +244,7 @@ nav a:hover{
 .funcionalidades p{
     color: #ffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 160px;
     margin-bottom: 20px;
 }
@@ -273,7 +293,7 @@ nav a:hover{
 } */
 
 .btn-simule-agora{
-    margin: 60px auto 0;
+    margin: 40px auto 0;
 }
 
 .btn-simule-agora p {
@@ -304,7 +324,7 @@ nav a:hover{
 
 
 .img2 img{
-    max-width: 407px;
+    max-width: 400px;
     width: 100%;
     border-radius: 20px;
 }
@@ -366,11 +386,10 @@ nav a:hover{
 }
 
 /*daqui para baixo é o css do footer */
-.container_footer{
+.container_fale_conosco{
     width: 100%;
     height: 103vh;
-    background: rgb(0,1,17);
-    background: linear-gradient(0deg, rgba(0,1,17,1) 8%, rgba(1,13,60,1) 50%, rgba(0,1,17,1) 93%);
+    background: #000235;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -574,12 +593,27 @@ nav a:hover{
     font-size: 15px;
     text-align: center;
 }
-.nota .simbolo
+
+
+.nota footer
 {
-  color: white
-  ;width:100%;
+  color: white;
+  width:100%;
   height:10%;
   text-align: center;
   margin-top: 2%;
   font-family: 'roboto';
 } 
+
+
+footer{
+    width: 100%;
+    padding: 30px;
+    height: 70px;
+    text-align: center;
+    color: #FAF9FF;
+    background: #000235;
+    background: linear-gradient(0deg, rgba(0,1,17,1) 10%, #000235 90%);
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
