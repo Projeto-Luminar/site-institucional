@@ -1,6 +1,6 @@
 /* Resetando CSS, Definindo Estilizações Padrão e Importando Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-// resetando css do navegador
+/* resetando css do navegador */
 * {
   margin: 0;
   padding: 0;
@@ -34,8 +34,8 @@ body {
 }
 
 
-// Função "@media" (função do css para responsividade) onde o site irá se adaptar a telas que tenham até 768px de largura
-@media only screen and (max-width: 768p x) {
+/* Função "@media" (função do css para responsividade) onde o site irá se adaptar a telas que tenham até 768px de largura */
+@media only screen and (max-width: 768px) {
   .container-main {
     width: 80%;
     height: 100%;
@@ -79,7 +79,7 @@ body {
   justify-content: space-around;
   gap: 20px;
 }
-// gap (espaço entre os itens) 
+/* gap (espaço entre os itens) */ 
 @media only screen and (max-width: 768px) {
   .container-main-content {
     flex-direction: column;
@@ -94,6 +94,19 @@ body {
 .container-main-content .left {
   display: flex;
   flex-direction: column;
+}
+
+.container-main-content .left a{
+    background-color: #8181D7;
+    width: 150px;
+    border-radius: 50px;
+    font-family: 'Concert One', cursive;
+    text-decoration: none;
+    color: #FAF9FF;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .container-main-content .left h3 {
@@ -231,7 +244,7 @@ body {
   padding-left: 48px;
   max-width: 264px;
   font-weight: 300;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 30px;
   color: #000000;
 }
