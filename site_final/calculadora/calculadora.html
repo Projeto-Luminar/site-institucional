@@ -18,10 +18,10 @@
           </div>
           <nav>
               <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#servicos">Serviços</a></li>
-                  <li><a href="#sobrenos">Sobre Nós</a></li>
-                  <li><a href="#fale-conosco">Fale Conosco</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#servicos_redirecionar">Serviços</a></li>
+                <li><a href="../index.html#sobrenos1">Sobre Nós</a></li>
+                <li><a href="../index.html#fale-conosco">Fale Conosco</a></li>
               </ul>
           </nav>
           <div class="btn-login-cadastro">
@@ -72,11 +72,11 @@
         <div class="center">
           <h3>Essa taxa de absenteísmo tem um <span>custo</span> mensal de:</h3>
 
-          <span id="span_resultado_total" class="default-result">R$ </span>
+          <span id="span_resultado_total" style="color: black;" class="default-result">R$ </span>
 
           <h3>Com a Luminar, você <span>deixará</span> de <span>perder</span>:</h3>
 
-          <span id="span_resultado_absenteismo" class="absenteeism-result">R$</span>
+          <span id="span_resultado_absenteismo"  style="color:black"class="absenteeism-result">R$</span>
 
           <h4>Venha reverter este cenário!</h4>
 
@@ -108,8 +108,10 @@
 
       // daqui para baixo temos as contas
       var resultado = Funcionarios * salarioMedio * (absenteismo / 100);
+     
 
       // convertendo para a moeda brasileira
+      span_resultado_total.style.color = "red"
       span_resultado_total.innerHTML = resultado.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL",
@@ -120,6 +122,7 @@
       var resultadoIluminacao = resultado * 0.287;
 
       // convertendo para a moeda brasileira
+      span_resultado_absenteismo.style.color = "green"
       span_resultado_absenteismo.innerHTML = resultadoIluminacao.toLocaleString(
         "pt-BR",
         {

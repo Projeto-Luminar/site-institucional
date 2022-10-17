@@ -196,7 +196,8 @@ nav a:hover{
     width: 60%;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 0 20px 20px 0;   
+    border-radius: 0 20px 20px 0;  
+    height: 80%;
 }
 
 .div_forms h2 {
