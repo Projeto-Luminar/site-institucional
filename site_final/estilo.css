@@ -369,6 +369,7 @@ nav a:hover{
 .container_sobrenos{
     width: 90%;
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -382,10 +383,24 @@ nav a:hover{
     margin: 50px 0; /* esta margem é para espaçar o elemento que será inserido logo acima */
 }
 
+.textos_sobrenos{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 300px;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.textos_sobrenos b{
+    color: #FFFA86;
+}
+
 .sobrenos .caixas_sobrenos{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    text-align: center;
     background-color: #000235;
     width: 95%;
     height: 550px;
@@ -429,7 +444,6 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 .container_central{
    
@@ -460,7 +474,8 @@ nav a:hover{
 
 .textos{
     width: 80%;
-    margin: 10%;
+    margin: 10px;
+    margin-left: 30px;
     height: 100%;
 }
 .note p{
