@@ -150,7 +150,7 @@
     .kpi h5::after{
         content: "";
         border-bottom:solid 2px black;
-        width: 120%;
+        width: 110%;
         display: block;
         height: 2px;
     }
@@ -173,7 +173,8 @@
         height: 60px;
         background-color: #FAF9FF;
         border-radius: 20px;
-        font-family: 'Concert One';
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
         font-size: 30px;
         color: #000235;
      }

@@ -11,50 +11,84 @@
 </head>
 
 <body>
+    <header>
+
+
+        <div class="header-luminar">
+            <div class="logo-luminar">
+                <img src="../assets/logoLuminar.png" alt="Logo Luminar" width="160px" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobrenos">Sobre Nós</a></li>
+                    <li><a href="#fale-conosco">Fale Conosco</a></li>
+                </ul>
+            </nav>
+            <div class="btn-login-cadastro">
+                <a href="./login/login.html" class="btn-login">Fazer Login</a>
+                <a href="./cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
+            </div>
+        </div>
+        <div class="linha-header">
+        </div>
+    </header>
+
     <!-- CONTEUDO -->
-    <div class="box_cad">
-        <div class="img_box">
-            <img src="./icones/Vector.png" alt="">
+
+    <div class="container_cadastro">
+
+
+        <div class="box_cad">
+            <div class="img_box">
+                <img src="./icones/Vector.png" alt="">
+            </div>
+            <div class="form_box">
+                <h2>Crie uma conta <b>Gratuita!</b></h2>
+                <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
+                <form action="#">   
+
+                    <div class="container-nome-e-sobrenome">
+                        <div class="input_group ">
+                            <label for="input_nome">Nome <b>*</b></label>
+                            <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
+                        </div>
+        
+                        <div class="input_group ">
+                            <label for="input_sobrenome">Sobrenome <b>*</b></label>
+                            <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
+                        </div>
+        
+                    </div>
+
+                  
+                    <div class="input_group">
+                        <label for="input_email">E-mail <b>*</b></label>
+                        <input type="text" name="email" id="input_email" placeholder="name@example.com">
+                    </div>
+    
+                    <div class="input_group">
+                        <label for="input_senha">Senha <b>*</b></label>
+                        <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                    </div>
+    
+                    <div class="input_group">
+                        <button onclick="enviar()">
+                            Enviar
+                        </button>
+                    </div>
+    
+                    <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
+                    <div class="moments">
+                        <p><h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
+                    </div>
+            </div>
+            </form>
         </div>
-        <div class="form_box">
-            <h2>Crie uma conta <b>Gratuita!</b></h2>
-            <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
-            <form action="#">
-                <div class="input_group w30">
-                    <label for="input_nome">Nome <b>*</b></label>
-                    <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
-                </div>
-
-                <div class="input_group w50">
-                    <label for="input_sobrenome">Sobrenome <b>*</b></label>
-                    <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
-                </div>
-
-                <div class="input_group">
-                    <label for="input_email">E-mail <b>*</b></label>
-                    <input type="text" name="email" id="input_email" placeholder="name@example.com">
-                </div>
-
-                <div class="input_group">
-                    <label for="input_senha">Senha <b>*</b></label>
-                    <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
-                </div>
-
-                <div class="input_group">
-                    <button onclick="enviar()">
-                        Enviar
-                    </button>
-                </div>
-
-                <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
-                <div class="moments">
-                    <p><h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
-                </div>
         </div>
-        </form>
-    </div>
-    </div>
 
+    </div>    
 
 </body>
 

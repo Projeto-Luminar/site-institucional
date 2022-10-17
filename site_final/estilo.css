@@ -17,6 +17,20 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #fff;
+  
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #8181D7;
+  
+  }
+
 .home-background{
     background-image: url(./assets/background_home_maior2.png);
     padding: 16px 130px;
@@ -88,6 +102,7 @@ nav a:hover{
     align-items: center;
     margin-right: 20px;
     margin-top: 12px;
+    cursor: pointer;
 }
 
 .btn-login{
@@ -102,6 +117,10 @@ nav a:hover{
     text-decoration: none;
     color: #FAF9FF;
     text-align: center;
+    cursor: pointer;
+}
+.btn-login:hover{
+    border: solid 3px #fffa86
 }
 
 .btn-cadastro{
@@ -116,6 +135,11 @@ nav a:hover{
     text-decoration: none;
     color: #000235;
     text-align: center;
+}
+
+.btn-cadastro:hover{
+    background-color: #000235;
+    color: #FFFA86;
 }
 
 .conteudo{
@@ -142,6 +166,10 @@ nav a:hover{
     border-radius: 50px;
     margin: 60px 0;
 }
+
+.btn-confira a:hover{
+    background-color: #8191D0;
+  }
 
 .btn-confira a{
     display: inline-block;
@@ -299,8 +327,10 @@ nav a:hover{
 .btn-simule-agora p {
     color: #FAF9FF;
     font-family: 'Roboto', sans-serif;
-    margin-left: 50px;
+    margin-left: 80px;
     margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .btn-simule-agora a{
@@ -316,6 +346,11 @@ nav a:hover{
     text-transform: uppercase;
     text-align: right;
 }
+
+.btn-simule-agora a:hover{
+    background-color: #8191D0;
+  
+  }
 
 .btn-simule-agora a span{
     margin-left: 20px;
@@ -422,17 +457,10 @@ nav a:hover{
     border-radius:25px ;
 }
 
-.titulo_footer{
-    font-weight:500;
-    font-size: 43px;
-  
-    font-family: 'Concert One', cursive;
-    margin-left: 10%;
-    color: #000235;
-}
+
 .textos{
     width: 80%;
-    margin-left: 10%;
+    margin: 10%;
     height: 100%;
 }
 .note p{
@@ -444,8 +472,14 @@ nav a:hover{
 
 .textos p{
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     font-weight:bold;
+    color: #000235;
+}
+.textos .titulo-contato{
+    font-weight:500;
+    font-size: 43px;
+    font-family: 'Concert One', cursive;
     color: #000235;
 }
 
@@ -467,12 +501,13 @@ nav a:hover{
   .campo input{
    width: 90%;
    height: 25px;
-   background-color: #8181D7;
+  
    border-radius: 5px;
    text-align: center;
-   border: #1D3E5C solid 1px;
+   border: #8181D7 solid 3px;
   
   }
+
   /* AQUI É SÓ PARA 3 INPUT */
   .campo3{
     margin-top: 10px;
@@ -492,14 +527,14 @@ nav a:hover{
   .campo3 .input3{ 
    width: 90%;
    height:70px;
-   border: #8181D7 solid 1px;
+   border: #8181D7 solid 3px;
    text-align: center;
    border-radius: 3px;
    }
    .textos button{
     background-color: #000235;
-    font-family:concert One;
-    color: wheat;
+    font-family: 'Roboto', sans-serif;
+    color: white;
     font-size: 15px;
     margin-left: 5%;
     margin-top: 5%;
@@ -507,7 +542,13 @@ nav a:hover{
     width: 20%;
     height: 30px;
     border: 0;
+    cursor: pointer;
    }
+
+   .textos button:hover{
+    background-color: #8191D0;
+  
+  }
    .contatos_email{
     height: 100%;
     width: 35%;
@@ -542,17 +583,19 @@ nav a:hover{
 
 .nota_estrela{
     width:54%;
-    height: 97.5%;
+    height: 99.5%;
     border-bottom: solid 2px   #8181D7;
     border-top: solid 2px   #8181D7;
     border-right: solid 2px   #8181D7;
     border-radius: 0px 25px 25px 0px;
     display: flex;
     justify-content: space-evenly;
-    font-family: 'Concert One';
+    font-family: 'Roboto', sans-serif;
     flex-wrap: wrap;
-  
 }
+
+
+
 .notas_site{
     font-family: 'Concert One';
     color: white;
@@ -571,6 +614,7 @@ nav a:hover{
 .estrela1{
     margin-top: 5%;
 }
+
 .nota_texto{
     width:45%;
     height: 99.5%;
@@ -582,6 +626,7 @@ nav a:hover{
    align-items: center;
    flex-wrap:wrap ;
    font-family: 'roboto'; 
+   padding: 5%;
 }
 .nota_texto h3{
     margin: 0;

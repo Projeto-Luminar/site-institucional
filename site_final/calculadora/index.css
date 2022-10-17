@@ -9,7 +9,7 @@
 
 body {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   background-color: #000E3E;
   font-family: "Roboto", sans-serif;
@@ -21,14 +21,128 @@ body {
   margin: 0 auto;
 }
 
+header{
+  z-index: 30;
+  position: fixed;   
+  top: 0;
+  width: 100%;
+  padding-bottom: 0;
+  text-align: center;
+  background-color:#000235;
+}
+
+.linha-header{
+  margin: 0;
+  height: 4px;
+  background-color: #8181D7;
+}
+
+.header-luminar{
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-luminar{
+  width: 20%;
+}
+
+nav{
+  font-family: 'Roboto', sans-serif;
+  margin: 0 10%;
+  width: 60%;
+  margin-top: 1.5%;
+}
+
+
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav ul li{
+  justify-content: space-between;
+}
+
+nav a{
+  text-decoration: none;
+  color: #FAF9FF;
+}
+
+nav a:hover{
+  border-bottom: 4px solid #FFFA86;
+  font-weight: bold;
+}
+
+.container_login{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-login-cadastro{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.btn-login{
+  margin-right: 10px;
+  display: inline-block;
+  border: solid 3px #AAD8D8;
+  padding: 1px;
+  width: 110px;
+  font-size: 15px;
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #FAF9FF;
+  text-align: center;
+  cursor: pointer;
+}
+.btn-login:hover{
+  border: solid 3px #fffa86
+}
+
+.btn-cadastro{
+  display: inline-block;
+  background-color: #FFFA86;
+  border: solid 3px #FFFA86;
+  padding: 1px;
+  width: 110px;
+  font-size: 15px;
+  border-radius: 50px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #000235;
+  text-align: center;
+}
+
+.btn-cadastro:hover{
+  background-color: #000235;
+  color: #FFFA86;
+}
+
+
 /* Iniciando estilização principal Desktop */
 
 /* Estilização do Container Principal (fundo branco) */
 .container-main {
   width: 80%;
   height: 650px;
-  margin: 67px auto 110px;
-  padding: 57px 44px 61px 78px;
+  margin: 110px auto 0;
+  padding: 37px 44px 61px 58px;
   border-radius: 5px;
   background: #ffffff;
 }
@@ -109,6 +223,9 @@ body {
     margin-top: 30px;
 }
 
+.container-main-content .left a:hover{
+    background-color: #0461cf;
+}
 .container-main-content .left h3 {
   font-weight: 600;
   font-size: 24px;
@@ -125,8 +242,8 @@ body {
 }
 
 .container-main-content .left label {
-  font-weight: 300;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 22px;
   color: #000000;
   margin-top: 29px;
@@ -167,6 +284,11 @@ body {
   border: 0;
 }
 
+.container-main-content .left button:hover{
+  opacity: 0.8;
+}
+
+
 /* Estilização do Conteúdo Principal - Centro */
 
 .container-main-content .center {
@@ -191,7 +313,7 @@ body {
 
 .container-main-content .center h3 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 21px;
   color: #0461cf;
   text-align: center;
@@ -243,7 +365,7 @@ body {
   border-left: 1px solid #000;
   padding-left: 48px;
   max-width: 264px;
-  font-weight: 300;
+
   font-size: 23px;
   line-height: 30px;
   color: #000000;

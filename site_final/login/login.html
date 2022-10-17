@@ -9,32 +9,41 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <!-- <header>
-        <div class="container">
-            <div class="titulo">
-                <h1>Luminar</h1>
+    <header>
+
+
+        <div class="header-luminar">
+            <div class="logo-luminar">
+                <img src="../assets/logoLuminar.png" alt="Logo Luminar" width="160px" />
             </div>
-                
-            <div class="navegacao">
+            <nav>
                 <ul>
-                    <li onclick="home()">Home</li>
-                    <li onclick="servico()">Serviços</li>
-                    <li onclick="sobre_nos()">Sobre Nós</li>
-                    <li onclick="fale_conosco()">Fale Conosco</li>
-                    <li>|</li>
-                    <li class="agora" onclick="fazer_login()">Fazer Login</li>
-                    <li onclick="cadastre_se()">Cadastre-se</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobrenos">Sobre Nós</a></li>
+                    <li><a href="#fale-conosco">Fale Conosco</a></li>
                 </ul>
+            </nav>
+            <div class="btn-login-cadastro">
+                <a href="./login/login.html" class="btn-login">Fazer Login</a>
+                <a href="./cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
             </div>
         </div>
-    </header> -->
+        <div class="linha-header">
+        </div>
+    </header>
+
+<div class="container_login">
+
     <div id="box_login" class="box_login">
+    
         <div id="div_img" class="div_img">
             <img src="./img/Vector.png" alt="">
         </div>
         <div id="div_forms" class="div_forms">
-            <h2>Entre na sua conta ou <b><a href="../cadastro/cadastro.html">cadastre-se!</a></b></h2>
-            <h4>Preencha os campos abaixo para fazer o login!</h4><br><br>
+            <h2>Entre na sua conta ou <p><b><a href="../cadastro/cadastro.html">cadastre-se!</a></b></p></h2>
+            <h4>Preencha os campos abaixo para fazer o login!</h4>
+    
             <div id="div_email" class="div_email_senha">
                 <label for="email">E-mail:</label>
                 <input type="text" id="input_email" name="email">
@@ -43,8 +52,8 @@
                 <label for="senha"> Senha:</label>
                 <input type="password" id="input_senha" name="senha">
             </div>
-            <button onclick="enviar()" class="button_login">Enviar</button><br><br>
-
+            <button onclick="enviar()" class="button_login">Enviar</button>
+    
             <h4 class="amarelo">Deslogue do passado, e logue para o futuro!</h4>
             <div class="div_rodape">
                 <p></p>
@@ -53,20 +62,26 @@
                 <p><h4>Esqueceu a senha? <a onclick="clique_aqui()"> Clique aqui</h4></a></p>
             </div>
         </div>
+    
     </div>
+
+</div>
+    
 </body>
 </html>
 <script>
     function enviar() {
         var e_mail = input_email.value;
         var senha = input_senha.value;
-        if (e_mail == "luminar@sptech.school" && senha == "luminarzic@"){
+        if (e_mail == "admin@sptech.school" && senha == "admin"){
             alert("Bem-Vindo!")
+            window.location.href = "../Tela_dashboard/home_dashboard.html";
             
         }else {
             alert("E-mail ou Senha inválida")
         } 
     }
+
     function home() {
         alert("Página inicial")
     }

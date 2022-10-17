@@ -9,14 +9,37 @@
     <title>Simulador</title>
   </head>
   <body>
+    <header>
+
+
+      <div class="header-luminar">
+          <div class="logo-luminar">
+              <img src="../assets/logoLuminar.png" alt="Logo Luminar" width="160px" />
+          </div>
+          <nav>
+              <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#servicos">Serviços</a></li>
+                  <li><a href="#sobrenos">Sobre Nós</a></li>
+                  <li><a href="#fale-conosco">Fale Conosco</a></li>
+              </ul>
+          </nav>
+          <div class="btn-login-cadastro">
+              <a href="./login/login.html" class="btn-login">Fazer Login</a>
+              <a href="./cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
+          </div>
+      </div>
+      <div class="linha-header">
+      </div>
+  </header>
     <div class="container-main">
 
       <!-- Textos iniciais da página -->
       <div class="container-main-header">
         <h3>Simule Agora</h3>
         <p>
-          Faça uma simulação de quanto você irá economizar com a
-          <span>Luminar</span> <bold>em menos de 1 minuto!</bold>
+          <bold> Faça uma simulação do quanto você irá economizar com a
+          <span>Luminar</span> em menos de 1 minuto!</bold>
         </p>
       </div>
 
@@ -35,7 +58,7 @@
             empresa:</label>
           <input id="input_funcionarios"/>
 
-          <label> Qual a <span>média salarial dos funcionários</span>?</label>
+          <label> Qual o<span> custo salarial </span>dos funcionários?</label>
           <input id="input_salario"/>
 
           <label> Qual o percentual de <span>absenteísmo</span> da empresa?</label>
@@ -43,7 +66,6 @@
 
           <button onclick="calcular()">Calcular seu custo com absenteísmo</button>
 
-          <a href="../index.html"><span>< </span>Voltar</a>
         </div>
         
         <!--class que estiliza o resultado (no centro)-->
@@ -56,7 +78,7 @@
 
           <span id="span_resultado_absenteismo" class="absenteeism-result">R$</span>
 
-          <h4>Equivalente a 28,7% da taxa de absenteísmo.</h4>
+          <h4>Venha reverter este cenário!</h4>
 
           <a href="../cadastro/cadastro.html">
             <span>Economize agora!</span>
@@ -66,14 +88,16 @@
         <!--class que estiliza o texto (à direita)-->
         <div class="right">
           <p>
-            Pesquisas apontam que cerca de <span>28,7%</span> do tempo de trabalho
-            os funcionários têm seu <span>desempenho afetado</span> por conta da<span class="bolder"> iluminação</span> inadequada do ambiante.
+            Pesquisas apontam que cerca de <span class="bolder">28,7%</span> do tempo de trabalho
+            os funcionários têm seu <span class="bolder">desempenho afetado</span> por conta da<span class="bolder"> iluminação</span> inadequada do ambiente.
           </p>
         </div>
       </div>
 
       <span id="span_resultado"></span>
+
     </div>
+
   </body>
   <script>
     function calcular() {
