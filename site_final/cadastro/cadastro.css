@@ -168,13 +168,12 @@ nav a:hover {
     border-radius: 20px 0 0 20px;
 }
 
-/* .img_box img {
-    width: 100%;
-} */
+.img_box img {
+    width: 350px;
+}
 
 .form_box {
     background-color: white;
-    padding: 0px 40px;
     width: 60%;
     justify-content: space-evenly;
     align-items: center;
