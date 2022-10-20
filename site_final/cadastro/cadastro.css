@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 .form_box h2 {
@@ -13,15 +12,16 @@
 
 body {
     background-color: #000235;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
     z-index: 30;
-    position: fixed;
+    position: fixed;   
     width: 100%;
     padding-bottom: 0;
     text-align: center;
-    background-color: #000235;
+    background-color:#000117;
 }
 
 .linha-header {
