@@ -9,13 +9,14 @@
     <link rel="shortcut icon" href="./icones/luz.png" type="image/x-icon">
     <link rel="stylesheet" href="./cadastro.css">
 </head>
+
 <body>
     <!-- CONTEUDO -->
 
     <header>
         <div class="header-luminar">
             <div class="logo-luminar">
-                <img src="../assets/logoLuminar.png" alt="Logo Luminar" width="160px" />
+                <img src="./icones/logoLuminar.png" alt="Logo Luminar" width="160px" />
             </div>
             <nav>
                 <ul>
@@ -42,27 +43,27 @@
             <div class="form_box">
                 <h2>Crie uma conta <b>Gratuita!</b></h2>
                 <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
-                <form action="#">   
+                <form action="#">
 
                     <div class="container-nome-e-sobrenome">
                         <div class="input_group ">
                             <label for="input_nome">Nome <b>*</b></label>
                             <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
                         </div>
-        
+
                         <div class="input_group ">
                             <label for="input_sobrenome">Sobrenome <b>*</b></label>
                             <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
                         </div>
-        
+
                     </div>
 
-                  
+
                     <div class="input_group">
                         <label for="input_email">E-mail <b>*</b></label>
                         <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
                     </div>
-    
+
                     <div class="input_group">
                         <label for="input_senha">Senha <b>*</b></label>
                         <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
@@ -75,7 +76,7 @@
 
                     <div class="input_group">
                         <label for="input_telefone">Telefone <b>*</b></label>
-                        <input type="text" name="telefone" id="input_nome_empresa" placeholder="(XX)9XXXX-XXXX">
+                        <input type="text" name="telefone" id="input_telefone" placeholder="(XX)9XXXX-XXXX">
                     </div>
 
                     <div class="input_group">
@@ -90,28 +91,30 @@
 
                     <div class="input_group">
                         <label for="input_endereco">Endereço <b>*</b></label>
-                        <input type="text" name="Endereco" id="input_endereco" placeholder="Rua, Número, Bairro, Cidade e Estado">
+                        <input type="text" name="Endereco" id="input_endereco"
+                            placeholder="Rua, Número, Bairro, Cidade e Estado">
                     </div>
 
                     <div class="input_group">
                         <label for="input_cep">CEP <b>*</b></label>
-                        <input type="text" name="Endereco" id="input_endereco" placeholder="XXXXX-XXX">
+                        <input type="text" name="cep" id="input_cep" placeholder="XXXXX-XXX">
                     </div>
-    
+
                     <div class="input_group">
                         <button onclick="enviar()">
                             Enviar
                         </button>
                     </div>
-    
+
                     <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
                     <div class="moments">
-                        <p><h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
+                        <p>
+                        <h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
                     </div>
             </div>
             </form>
         </div>
-        </div>
+    </div>
     </div>
 </body>
 
@@ -123,24 +126,34 @@
         var sobrenome = input_sobrenome.value;
         var email = input_email.value;
         var senha = input_senha.value;
+        var nome_empresa = input_nome_empresa.value
+        var telefone = input_telefone.value
+        var cnpj = input_cnpj.value
+        var cpf = input_cpf.value
+        var endereco = input_endereco.value
+        var cep = input_cep.value
+
 
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == "") {
+        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "") {
             alert("Preencha todos os campos!");
-        }
-         
-       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
+        } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
             alert("Email inválido!");
             alert("senha muito curta");
-        }
-
-       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+        } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
             alert("Email inválido ");
-        }
-        else if((senha.length < 8)) {
+        } else if ((senha.length < 8)) {
             alert("Senha muito curta!");
-        }else {
+        } else if (telefone.indexOf("( )9 -") == -1 || telefone.length > 15 && telefone.length <= 15) {
+            alert("Numero inválido!")
+        } else if (cnpj.indexOf(". / -") == -1 || cnpj > 19 && cnpj <= 19) {
+            alert("CNPJ inválido!")
+        } else if (cpf.indexOf(". -") == -1 || cpf.length > 15 && cpf <= 15) {
+            alert('CPF inválido')
+        } else if (cep.indexOf('-') == -1 || cep.length > 10 && cep <= 10) {
+            alert('Cep inválido!')
+        } else {
             alert("Cadastro realizado com sucesso!");
         }
 
