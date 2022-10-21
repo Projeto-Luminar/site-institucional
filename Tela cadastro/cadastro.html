@@ -5,62 +5,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luminar</title>
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="./icones/luz.png" type="image/x-icon">
     <link rel="stylesheet" href="./cadastro.css">
 </head>
-
 <body>
     <!-- CONTEUDO -->
-    <div class="box_cad">
-        <div class="img_box">
-            <img src="./icones/Vector.png" alt="">
+
+    <header>
+        <div class="header-luminar">
+            <div class="logo-luminar">
+                <img src="../assets/logoLuminar.png" alt="Logo Luminar" width="160px" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#servicos_redirecionar">Serviços</a></li>
+                    <li><a href="../index.html#sobrenos1">Sobre Nós</a></li>
+                    <li><a href="../index.html#fale-conosco">Fale Conosco</a></li>
+                </ul>
+            </nav>
+            <div class="btn-login-cadastro">
+                <a href="../login/login.html" class="btn-login">Fazer Login</a>
+                <a href="../cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
+            </div>
         </div>
-        <div class="form_box">
-            <h2>Crie uma conta <b>Gratuita!</b></h2>
-            <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
-            <form action="#">
-                <div class="input_group w30">
-                    <label for="nome">Nome <b>*</b></label>
-                    <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
-                </div>
-                
-                <div class="input_group w50">
-                <label for="sobrenome">Sobrenome <b>*</b></label>
-                <input type="text" name="sobrenome" id="input_sobrenome"placeholder="Sobrenome">
-                </div>
-
-               <div class="input_group">
-                    <label for="email">E-mail <b>*</b></label>
-                    <input type="text" name="email" id="input_email" placeholder="name@example.com">
-                </div>
-
-                <div class="input_group">
-                    <label for="senha">Senha <b>*</b></label>
-                    <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
-                </div>
-
-                <div class="input_group">
-                    <button onclick="enviar()">
-                        Enviar
-                    </button>
-                </div>
-
-                <b>Sua melhor expêriencia começa aqui!</b>
-                <div class="moments">
-                    <p>Já tem uma conta? <a href="#">Faça login na Luminar</a></p>
-                </div>
+        <div class="linha-header">
         </div>
-        </form>
-    </div>
-    </div>
+    </header>
 
+    <div class="container_cadastro">
+        <div class="box_cad">
+            <div class="img_box">
+                <img src="./icones/Vector.png" alt="">
+            </div>
+            <div class="form_box">
+                <h2>Crie uma conta <b>Gratuita!</b></h2>
+                <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
+                <form action="#">   
 
+                    <div class="container-nome-e-sobrenome">
+                        <div class="input_group ">
+                            <label for="input_nome">Nome <b>*</b></label>
+                            <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
+                        </div>
+        
+                        <div class="input_group ">
+                            <label for="input_sobrenome">Sobrenome <b>*</b></label>
+                            <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
+                        </div>
+        
+                    </div>
+
+                  
+                    <div class="input_group">
+                        <label for="input_email">E-mail <b>*</b></label>
+                        <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                    </div>
+    
+                    <div class="input_group">
+                        <label for="input_senha">Senha <b>*</b></label>
+                        <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_senha">Nome da empresa <b>*</b></label>
+                        <input type="text" name="nome_empresa" id="input_nome_empresa" placeholder="Nome da empresa">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_telefone">Telefone <b>*</b></label>
+                        <input type="text" name="telefone" id="input_nome_empresa" placeholder="(XX)9XXXX-XXXX">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_cnpj">CNPJ <b>*</b></label>
+                        <input type="text" name="cnpj" id="input_cnpj" placeholder="XX.XXX.XXX/0001-XX">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_CPF">CPF <b>*</b></label>
+                        <input type="text" name="cpf" id="input_cpf" placeholder="000.000.000-00">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_endereco">Endereço <b>*</b></label>
+                        <input type="text" name="Endereco" id="input_endereco" placeholder="Rua, Número, Bairro, Cidade e Estado">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_cep">CEP <b>*</b></label>
+                        <input type="text" name="Endereco" id="input_endereco" placeholder="XXXXX-XXX">
+                    </div>
+    
+                    <div class="input_group">
+                        <button onclick="enviar()">
+                            Enviar
+                        </button>
+                    </div>
+    
+                    <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
+                    <div class="moments">
+                        <p><h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
+                    </div>
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script>
-    function enviar(){
+    function enviar() {
         var nome = input_nome.value;
         var sobrenome = input_sobrenome.value;
         var email = input_email.value;
@@ -68,27 +126,24 @@
 
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == ""){
+        if (nome == "" || sobrenome == "" || email == "" || senha == "") {
             alert("Preencha todos os campos!");
-        } else {
+        }
+         
+       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
+            alert("Email inválido!");
+            alert("senha muito curta");
+        }
+
+       else  if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+            alert("Email inválido ");
+        }
+        else if((senha.length < 8)) {
+            alert("Senha muito curta!");
+        }else {
             alert("Cadastro realizado com sucesso!");
         }
 
-        // Se o email está correto (com "@" e se tem depois do "@" sptech.school)
-        //caso não precise de sptech.schol inserir email.indexOf(".") == -1
-        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1){
-            alert("Email inválido!");
-        } else {
-            alert("Email válido!");
-        }
 
-        // Se a senha tem mais de 8 caracteres
-        if (senha.length < 8){
-            alert("Senha muito curta!");
-        } else {
-            alert("Senha válida!");
-        }
-
-       
     }
 </script>
