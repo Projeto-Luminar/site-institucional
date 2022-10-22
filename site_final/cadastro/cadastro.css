@@ -150,6 +150,7 @@ nav a:hover {
 
 
 .box_cad {
+    margin-top: 70px;
     display: flex;
     background-color: white;
     padding: 0px 40px;
