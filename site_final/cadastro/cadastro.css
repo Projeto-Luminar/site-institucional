@@ -142,7 +142,7 @@ nav a:hover {
 
 .container_cadastro {
     width: 100%;
-    height: 100vh;
+    height: 160vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,7 +151,6 @@ nav a:hover {
 
 .box_cad {
     display: flex;
-    max-height: 81%;
     background-color: white;
     padding: 0px 40px;
     width: 60%;
