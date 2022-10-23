@@ -48,12 +48,12 @@
                     <div class="container-nome-e-sobrenome">
                         <div class="input_group ">
                             <label for="input_nome">Nome <b>*</b></label>
-                            <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome">
+                            <input type="text" name="nome" id="input_nome" placeholder="Seu nome" required>
                         </div>
 
                         <div class="input_group ">
                             <label for="input_sobrenome">Sobrenome <b>*</b></label>
-                            <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
+                            <input type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome" required>
                         </div>
 
                     </div>
@@ -61,43 +61,53 @@
 
                     <div class="input_group">
                         <label for="input_email">E-mail <b>*</b></label>
-                        <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                        <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com" required>
                     </div>
 
                     <div class="input_group">
                         <label for="input_senha">Senha <b>*</b></label>
-                        <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                        <input type="password" name="password" id="input_senha" placeholder="No mínimo 8 caracteres" required>
                     </div>
 
                     <div class="input_group">
-                        <label for="input_senha">Nome da empresa <b>*</b></label>
-                        <input type="text" name="nome_empresa" id="input_nome_empresa" placeholder="Nome da empresa">
+                        <label for="input_senha_confirmacao">Confirmação de senha <b>*</b></label>
+                        <input type="password" name="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente" required>
                     </div>
 
                     <div class="input_group">
-                        <label for="input_telefone">Telefone <b>*</b></label>
-                        <input type="text" name="telefone" id="input_telefone" placeholder="(XX)9XXXX-XXXX">
+                        <label for="input_nome_empresa">Nome da empresa <b>*</b></label>
+                        <input type="text" name="nome_empresa" id="input_nome_empresa" placeholder="Nome da empresa" required>
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_nome_fantasia">Razão Social <b>*</b></label>
+                        <input type="text" name="nome_empresa" id="input_nome_fantasia" placeholder="Razão social da empresa" required>
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_telefone">Telefone Celular <b>*</b></label>
+                        <input type="text" name="telefone" id="input_telefone" placeholder="XX-9XXXXXXXX" required>
                     </div>
 
                     <div class="input_group">
                         <label for="input_cnpj">CNPJ <b>*</b></label>
-                        <input type="text" name="cnpj" id="input_cnpj" placeholder="XX.XXX.XXX/0001-XX">
+                        <input type="text" name="cnpj" id="input_cnpj" placeholder="XXXXXXXX0001-XX" required>
                     </div>
 
                     <div class="input_group">
                         <label for="input_CPF">CPF <b>*</b></label>
-                        <input type="text" name="cpf" id="input_cpf" placeholder="000.000.000-00">
+                        <input type="text" name="cpf" id="input_cpf" placeholder="000000000-00" required>
                     </div>
 
                     <div class="input_group">
                         <label for="input_endereco">Endereço <b>*</b></label>
                         <input type="text" name="Endereco" id="input_endereco"
-                            placeholder="Rua, Número, Bairro, Cidade e Estado">
+                            placeholder="Rua, Número, Bairro, Cidade e Estado" required>
                     </div>
 
                     <div class="input_group">
                         <label for="input_cep">CEP <b>*</b></label>
-                        <input type="text" name="cep" id="input_cep" placeholder="XXXXX-XXX">
+                        <input type="text" name="cep" id="input_cep" placeholder="00000-000" required>
                     </div>
 
                     <div class="input_group">
@@ -126,37 +136,35 @@
         var sobrenome = input_sobrenome.value;
         var email = input_email.value;
         var senha = input_senha.value;
-        var nome_empresa = input_nome_empresa.value
-        var telefone = input_telefone.value
-        var cnpj = input_cnpj.value
-        var cpf = input_cpf.value
-        var endereco = input_endereco.value
-        var cep = input_cep.value
-
+        var senha_confirm = input_senha_confirmacao.value;
+        var nome_empresa = input_nome_empresa.value;
+        var nome_fantasia = input_nome_fantasia.value;
+        var telefone = input_telefone.value;
+        var cnpj = input_cnpj.value;
+        var cpf = input_cpf.value;
+        var endereco = input_endereco.value;
+        var cep = input_cep.value;
 
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "") {
-            alert("Preencha todos os campos!");
-        } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
-            alert("Email inválido!");
-            alert("senha muito curta");
+        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || nome_fantasia == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "") {
+            alert("Preencha todos os campos");
         } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
-            alert("Email inválido ");
-        } else if ((senha.length < 8)) {
-            alert("Senha muito curta!");
-        } else if (telefone.indexOf("( )9 -") == -1 || telefone.length > 15 && telefone.length <= 15) {
-            alert("Numero inválido!")
-        } else if (cnpj.indexOf(". / -") == -1 || cnpj > 19 && cnpj <= 19) {
-            alert("CNPJ inválido!")
-        } else if (cpf.indexOf(". -") == -1 || cpf.length > 15 && cpf <= 15) {
-            alert('CPF inválido')
-        } else if (cep.indexOf('-') == -1 || cep.length > 10 && cep <= 10) {
-            alert('Cep inválido!')
+            alert("E-mail inválido!");
+        } else if (senha.length < 8) {
+            alert("Sua senha deve ter no mínimo 8 caracteres");
+        } else if (senha != senha_confirm) {
+            alert(`A confirmação de senha está incorreta`);
+        } else if (telefone.indexOf("-9", 2) == -1 || telefone.length > 12 && telefone.length <= 12) {
+            alert("O número deve conter 12 dígitos e '-9' após o DDD")
+        } else if (cnpj.indexOf("0001-") == -1 || cnpj > 15 && cnpj <= 15) {
+            alert("O CNPJ deve conter 14 dígitos e '0001-' antes dos dois dígitos finais.");
+        } else if (cpf.indexOf("-") == -1 || cpf.length > 12 && cpf <= 12) {
+            alert('O CPF deve conter 11 dígitos e um - antes dos dois dígitos finais.')
+        } else if (cep.indexOf('-') == -1 || cep.length > 9 && cep <= 9) {
+            alert('O CEP deve ter 8 dígitos e conter um - antes dos 3 dígitos finais')
         } else {
             alert("Cadastro realizado com sucesso!");
         }
-
-
     }
 </script>
