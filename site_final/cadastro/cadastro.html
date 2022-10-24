@@ -140,20 +140,27 @@
         // Se os campos estão vazios
         if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "") {
             alert("Preencha todos os campos!");
-        } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
+        }
+         if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1 && senha.length < 8) {
             alert("Email inválido!");
             alert("senha muito curta");
-        } else if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+        }
+        if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
             alert("Email inválido ");
-        } else if ((senha.length < 8)) {
+        }
+        if ((senha.length < 8)) {
             alert("Senha muito curta!");
-        } else if (telefone.indexOf("( )9 -") == -1 || telefone.length > 15 && telefone.length <= 15) {
+        }
+        if (telefone.indexOf("( )9 -") == -1 || telefone.length > 15 && telefone.length <= 15) {
             alert("Numero inválido!")
-        } else if (cnpj.indexOf(". / -") == -1 || cnpj > 19 && cnpj <= 19) {
+        }
+        if (cnpj.indexOf(". / -") == -1 || cnpj > 19 && cnpj <= 19) {
             alert("CNPJ inválido!")
-        } else if (cpf.indexOf(". -") == -1 || cpf.length > 15 && cpf <= 15) {
+        }
+        if (cpf.indexOf(". -") == -1 || cpf.length > 15 && cpf <= 15) {
             alert('CPF inválido')
-        } else if (cep.indexOf('-') == -1 || cep.length > 10 && cep <= 10) {
+        }
+        if (cep.indexOf('-') == -1 || cep.length > 10 && cep <= 10) {
             alert('Cep inválido!')
         } else {
             alert("Cadastro realizado com sucesso!");
