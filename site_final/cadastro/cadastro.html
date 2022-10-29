@@ -39,67 +39,59 @@
 
     <div class="container_cadastro">
         <div class="box_cad">
-            <div class="img_box">
-                <img src="./icones/Vector.png" alt="">
-            </div>
-            <div class="form_box">
+            <div class="titulo_cadastro">
                 <h2>Crie uma conta <b>Gratuita!</b></h2>
                 <h4>Cadastre-se para ter acesso aos nossos serviços!</h4>
-                <form action="#">
-
-                    <div class="container-nome-e-sobrenome">
-                        <div class="input_group">
-                            <label for="input_nome">Nome <b>*</b></label>
-                            <input onkeyup="verificar_nome()" type="text" name="nome" id="input_nome" placeholder="Seu nome">
-                        </div>
-
-                        <div class="input_group ">
-                            <label for="input_sobrenome">Sobrenome <b>*</b></label>
-                            <input onkeyup="verificar_sobrenome()" type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
-                        </div>
-
-                    </div>
-
-
+            </div>
+            <div class="formularios">
+            <div class="form_box2">
                     <div class="input_group">
-                        <label for="input_email">E-mail <b>*</b></label>
-                        <input onkeyup="verificar_email()" type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                        <label for="input_nome">Nome <b>*</b></label>
+                        <input onkeyup="verificar_nome()" type="text" name="nome" id="input_nome" placeholder="Seu nome">
                     </div>
 
-                    <div class="input_group">
-                        <label for="input_senha">Senha <b>*</b></label>
-                        <input onkeyup="verificar_senha()" type="password" name="password" id="input_senha" placeholder="No mínimo 8 caracteres">
+                    <div class="input_group ">
+                        <label for="input_sobrenome">Sobrenome <b>*</b></label>
+                        <input onkeyup="verificar_sobrenome()" type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
                     </div>
+                <div class="input_group">
+                    <label for="input_telefone">Telefone Celular <b>*</b></label>
+                    <input onkeyup="verificar_telefone()" type="text" name="telefone" id="input_telefone" placeholder="XX-9XXXXXXXX">
+                </div>
+                <div class="input_group">
+                    <label for="input_CPF">CPF <b>*</b></label>
+                    <input onkeyup="verificar_cpf()" type="text" name="cpf" id="input_cpf" placeholder="000000000-00">
+                </div>
+                <div class="input_group">
+                    <label for="input_email">E-mail <b>*</b></label>
+                    <input onkeyup="verificar_email()" type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                </div>
 
-                    <div class="input_group">
-                        <label for="input_senha_confirmacao">Confirmação de senha <b>*</b></label>
-                        <input onkeyup="confirmar_senha()" type="password" name="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente">
-                    </div>
+                <div class="input_group">
+                    <label for="input_senha">Senha <b>*</b></label>
+                    <input onkeyup="verificar_senha()" type="password" name="password" id="input_senha" placeholder="No mínimo 8 caracteres">
+                </div>
 
+                <div class="input_group">
+                    <label for="input_senha_confirmacao">Confirmação de senha <b>*</b></label>
+                    <input onkeyup="confirmar_senha()" type="password" name="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente">
+                </div>
+            </div>
+            <div class="form_box">
+                
                     <div class="input_group">
                         <label for="input_nome_empresa">Nome da empresa <b>*</b></label>
                         <input onkeyup="verificar_nome_e()" type="text" name="nome_empresa" id="input_nome_empresa" placeholder="Nome da empresa">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_telefone">Telefone Celular <b>*</b></label>
-                        <input onkeyup="verificar_telefone()" type="text" name="telefone" id="input_telefone" placeholder="XX-9XXXXXXXX">
-                    </div>
-
-                    <div class="input_group">
                         <label for="input_cnpj">CNPJ <b>*</b></label>
                         <input onkeyup="verificar_cnpj()" type="text" name="cnpj" id="input_cnpj" placeholder="XXXXXXXX0001-XX">
                     </div>
-
                     <div class="input_group">
-                        <label for="input_CPF">CPF <b>*</b></label>
-                        <input onkeyup="verificar_cpf()" type="text" name="cpf" id="input_cpf" placeholder="000000000-00">
-                    </div>
-
-                    <div class="input_group">
-                        <label for="input_endereco">Endereço <b>*</b></label>
-                        <input onkeyup="verificar_endereco()" type="text" name="Endereco" id="input_endereco"
-                            placeholder="Rua, Número, Bairro, Cidade e Estado">
+                        <label for="input_endereco">Rua <b>*</b></label>
+                        <input onkeyup="verificar_rua()" type="text" name="Endereco" id="input_rua"
+                            placeholder="Rua da sua empresa">
                     </div>
 
                     <div class="input_group">
@@ -108,20 +100,31 @@
                     </div>
 
                     <div class="input_group">
-                        <button onclick="enviar()">
-                            Enviar
-                        </button>
+                        <label for="input_numero">Número da sua empresa <b>*</b></label>
+                        <input onkeyup="" type="number" name="numero" id="input_numero" placeholder="123">
                     </div>
 
-                    <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
+                    <div class="input_group">
+                        <label for="input_cidade">Cidade<b>*</b></label>
+                        <input onkeyup="" type="number" name="numero" id="input_cidade" placeholder="São Paulo">
+                    </div>
+
+                    <div class="input_group">
+                        <label for="input_cidade">Estado<b>*</b></label>
+                        <input onkeyup="" type="text" name="estado" id="input_estado" placeholder="SP">
+                    </div>
+            </div>
+        </div>
+        <div class="input_group">
+            <button onclick="enviar()">
+                Enviar
+            </button>
+        </div>
+            <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
                     <div class="moments">
                         <p>
                         <h4>Já tem uma conta? <a href="../login/login.html">Faça login na Luminar</h4></a></p>
                     </div>
-            </div>
-            </form>
-        </div>
-    </div>
     </div>
 </body>
 
@@ -217,12 +220,12 @@
         } else {document.getElementById("input_cpf").style.borderColor = "red";}
     }
 
-    function verificar_endereco() {
-        var endereco = input_endereco.value;
+    function verificar_rua() {
+        var rua = input_rua.value;
 
-        if (endereco == "") {
+        if (rua == "") {
             document.getElementById("input_endereco").style.borderColor = "black";
-        } else if (endereco.length > 10) {
+        } else if (rua.length > 5) {
             document.getElementById("input_endereco").style.borderColor = "green";
         } else {document.getElementById("input_endereco").style.borderColor = "red";}
     }
