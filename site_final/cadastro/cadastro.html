@@ -245,7 +245,7 @@
 
         if (num_e == "") {
             document.getElementById("input_numero").style.borderColor = "black";
-        } else if (num_e.length > 2) {
+        } else if (num_e.length > 1) {
             document.getElementById("input_numero").style.borderColor = "green";
         } else {document.getElementById("input_numero").style.borderColor = "red";}
     }
@@ -260,14 +260,6 @@
         } else {document.getElementById("input_cidade").style.borderColor = "red";}
     }
 
-    function verificar_cidade() {
-        var cidade = input_cidade.value;
-        if (cidade == "") {
-            document.getElementById("input_cidade").style.borderColor = "black";
-        } else if (cidade.length >= 1) {
-            document.getElementById("input_cidade").style.borderColor = "green";
-        } else {document.getElementById("input_cidade").style.borderColor = "red";}
-    }
 
     function verificar_estado() {
         var cidade = input_estado.value;
