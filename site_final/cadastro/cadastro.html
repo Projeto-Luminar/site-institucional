@@ -55,7 +55,7 @@
                         <input onkeyup="verificar_sobrenome()" type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
                     </div>
                 <div class="input_group">
-                    <label for="input_telefone">Telefone Celular <b>*</b></label>
+                    <label for="input_telefone">Telefone <b>*</b></label>
                     <input onkeyup="verificar_telefone()" type="text" name="telefone" id="input_telefone" placeholder="XX-9XXXXXXXX">
                 </div>
                 <div class="input_group">
@@ -101,17 +101,17 @@
 
                     <div class="input_group">
                         <label for="input_numero">Número da sua empresa <b>*</b></label>
-                        <input onkeyup="" type="number" name="numero" id="input_numero" placeholder="123">
+                        <input onkeyup="verificar_num()" type="number" name="numero" id="input_numero" placeholder="123">
                     </div>
 
                     <div class="input_group">
                         <label for="input_cidade">Cidade<b>*</b></label>
-                        <input onkeyup="" type="number" name="numero" id="input_cidade" placeholder="São Paulo">
+                        <input onkeyup="verificar_cidade()" type="text" name="numero" id="input_cidade" placeholder="São Paulo">
                     </div>
 
                     <div class="input_group">
                         <label for="input_cidade">Estado<b>*</b></label>
-                        <input onkeyup="" type="text" name="estado" id="input_estado" placeholder="SP">
+                        <input onkeyup="verificar_estado()" type="text" name="estado" id="input_estado" placeholder="SP">
                     </div>
             </div>
         </div>
@@ -220,16 +220,7 @@
         } else {document.getElementById("input_cpf").style.borderColor = "red";}
     }
 
-    function verificar_rua() {
-        var rua = input_rua.value;
-
-        if (rua == "") {
-            document.getElementById("input_endereco").style.borderColor = "black";
-        } else if (rua.length > 5) {
-            document.getElementById("input_endereco").style.borderColor = "green";
-        } else {document.getElementById("input_endereco").style.borderColor = "red";}
-    }
-
+    
     function verificar_cep() {
         var cep = input_cep.value;
         if (cep == "") {
@@ -237,6 +228,54 @@
         } else if (cep.indexOf('-') > -1 && cep.length == 9) {
             document.getElementById("input_cep").style.borderColor = "green";
         } else {document.getElementById("input_cep").style.borderColor = "red";}
+    }
+
+    function verificar_rua() {
+        var rua = input_rua.value;
+
+        if (rua == "") {
+            document.getElementById("input_rua").style.borderColor = "black";
+        } else if (rua.length > 5) {
+            document.getElementById("input_rua").style.borderColor = "green";
+        } else {document.getElementById("input_rua").style.borderColor = "red";}
+    }
+    
+    function verificar_num() {
+        var num_e = input_numero.value;
+
+        if (num_e == "") {
+            document.getElementById("input_numero").style.borderColor = "black";
+        } else if (num_e.length > 2) {
+            document.getElementById("input_numero").style.borderColor = "green";
+        } else {document.getElementById("input_numero").style.borderColor = "red";}
+    }
+
+
+    function verificar_cidade() {
+        var cidade = input_cidade.value;
+        if (cidade == "") {
+            document.getElementById("input_cidade").style.borderColor = "black";
+        } else if (cidade.length >= 1) {
+            document.getElementById("input_cidade").style.borderColor = "green";
+        } else {document.getElementById("input_cidade").style.borderColor = "red";}
+    }
+
+    function verificar_cidade() {
+        var cidade = input_cidade.value;
+        if (cidade == "") {
+            document.getElementById("input_cidade").style.borderColor = "black";
+        } else if (cidade.length >= 1) {
+            document.getElementById("input_cidade").style.borderColor = "green";
+        } else {document.getElementById("input_cidade").style.borderColor = "red";}
+    }
+
+    function verificar_estado() {
+        var cidade = input_estado.value;
+        if (cidade == "") {
+            document.getElementById("input_estado").style.borderColor = "black";
+        } else if (cidade.length >= 1) {
+            document.getElementById("input_estado").style.borderColor = "green";
+        } else {document.getElementById("input_estado").style.borderColor = "red";}
     }
 
 
@@ -250,11 +289,14 @@
         var telefone = input_telefone.value;
         var cnpj = input_cnpj.value;
         var cpf = input_cpf.value;
-        var endereco = input_endereco.value;
         var cep = input_cep.value;
+        var num = input_numero.value;
+        var cidade = input_cidade.value;
+        var rua = input_rua.value;
+        var estado = input_estado.value;
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "") {
+        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "" || num == "" || cidade == "" || rua == "" || estado == "") {
             alert("Preencha todos os campos");
         } else if (nome.length <= 3) {
             alert("O nome deve ter mais de 2 caracteres");
