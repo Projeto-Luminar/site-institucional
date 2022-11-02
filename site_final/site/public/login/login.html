@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="shortcut icon" href="./img/luz.png" type="image/x-icon">
+    <link rel="stylesheet" href="../js/funcoes.js">
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <header>
 
@@ -35,53 +38,58 @@
         </div>
     </header>
 
-<div class="container_login">
+    <div class="container_login">
 
-    <div id="box_login" class="box_login">
-    
-        <div id="div_img" class="div_img">
-            <img src="./img/Vector.png" alt="">
+        <div id="box_login" class="box_login">
+
+            <div id="div_img" class="div_img">
+                <img src="./img/Vector.png" alt="">
+            </div>
+            <div id="div_forms" class="div_forms">
+                <h2>Entre na sua conta ou <p><b><a href="../cadastro/cadastro.html">cadastre-se!</a></b></p>
+                </h2>
+                <h4>Preencha os campos abaixo para fazer o login!</h4>
+
+                <div id="div_email" class="div_email_senha">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="input_email" name="email">
+                </div>
+                <div id="div_senha" class="div_email_senha">
+                    <label for="senha"> Senha:</label>
+                    <input type="password" id="input_senha" name="senha">
+                </div>
+                <button onclick="enviar()" class="button_login">Enviar</button>
+
+                <h4 class="amarelo">Deslogue do passado, e logue para o futuro!</h4>
+                <div class="div_rodape">
+                    <p></p>
+                </div>
+                <div class="div_rodape">
+                    <p>
+                    <h4>Esqueceu a senha? <a onclick="clique_aqui()"> Clique aqui</h4></a></p>
+                </div>
+            </div>
+
         </div>
-        <div id="div_forms" class="div_forms">
-            <h2>Entre na sua conta ou <p><b><a href="../cadastro/cadastro.html">cadastre-se!</a></b></p></h2>
-            <h4>Preencha os campos abaixo para fazer o login!</h4>
-    
-            <div id="div_email" class="div_email_senha">
-                <label for="email">E-mail:</label>
-                <input type="text" id="input_email" name="email">
-            </div>
-            <div id="div_senha" class="div_email_senha">
-                <label for="senha"> Senha:</label>
-                <input type="password" id="input_senha" name="senha">
-            </div>
-            <button onclick="enviar()" class="button_login">Enviar</button>
-    
-            <h4 class="amarelo">Deslogue do passado, e logue para o futuro!</h4>
-            <div class="div_rodape">
-                <p></p>
-            </div>
-            <div class="div_rodape">
-                <p><h4>Esqueceu a senha? <a onclick="clique_aqui()"> Clique aqui</h4></a></p>
-            </div>
-        </div>
-    
+
     </div>
 
-</div>
-    
 </body>
+
 </html>
 <script>
     function enviar() {
         var e_mail = input_email.value;
         var senha = input_senha.value;
-        if (e_mail == "admin@sptech.school" && senha == "admin"){
+        if (e_mail == "admin@sptech.school" && senha == "admin") {
             alert("Bem-Vindo!")
             window.location.href = "../Tela_dashboard/home_dashboard.html";
-            
-        }else {
+
+        } else {
             alert("E-mail ou Senha inválida")
-        } 
+        }
+        entrar()
+
     }
 
     function home() {
@@ -94,19 +102,88 @@
         alert("Sobre a Luminar")
     }
     function fale_conosco() {
-        alert("Fale Conosco")                           
+        alert("Fale Conosco")
     }
     function fazer_login() {
         alert("Faça o Login")
     }
     function cadastre_se() {
         alert("Cadastre-se")
-    } 
+    }
     function faca_login() {
         alert("Faça o Login")
     }
     function clique_aqui() {
         alert("Altere sua senha")
-    } 
-    
-    </script>
+    }
+
+
+
+
+    function entrar() {
+
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+</script>
