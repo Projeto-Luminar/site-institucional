@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="shortcut icon" href="./icones/luz.png" type="image/x-icon">
+    <script src="../js/funcoes.js"></script>
     <link rel="stylesheet" href="./cadastro.css">
 </head>
 
@@ -116,7 +117,7 @@
             </div>
         </div>
         <div class="input_group">
-            <button onclick="enviar()">
+            <button onclick="cadastrar()">
                 Enviar
             </button>
         </div>
@@ -132,184 +133,225 @@
 
 <script>
     function verificar_nome() {
-        var nome = input_nome.value;
-        if (nome == "") {
+        var nomeServer = input_nome.value;
+        if (nomeServer == "") {
             document.getElementById("input_nome").style.borderColor = "black"
-        } else if (nome.length >= 3) {
+        } else if (nomeServer.length >= 3) {
             document.getElementById("input_nome").style.borderColor = "green"
         } else {document.getElementById("input_nome").style.borderColor = "red"}
     }
 
     function verificar_sobrenome() {
-        var sobrenome = input_sobrenome.value;
+        var sobrenomeServer = input_sobrenome.value;
 
-        if (sobrenome == "") {
+        if (sobrenomeServer == "") {
             document.getElementById("input_sobrenome").style.borderColor = "black"
-        } else if (sobrenome.length >= 3) {
+        } else if (sobrenomeServer.length >= 3) {
             document.getElementById("input_sobrenome").style.borderColor = "green"
         } else {document.getElementById("input_sobrenome").style.borderColor = "red"}
     }
 
     function verificar_email(){
-        var email = input_email.value;
+        var emailServer = input_email.value;
 
-        if (email == "") {
+        if (emailServer == "") {
             document.getElementById("input_email").style.borderColor = "black"
-        } else if (email.indexOf("@") > -1 && (email.indexOf("sptech.school") > -1 || email.indexOf(".com") > -1 || email.indexOf(".com.br") > -1)) {
+        } else if (emailServer.indexOf("@") > -1 && (emailServer.indexOf("sptech.school") > -1 || emailServer.indexOf(".com") > -1 || emailServer.indexOf(".com.br") > -1)) {
             document.getElementById("input_email").style.borderColor = "green";
         } else {document.getElementById("input_email").style.borderColor = "red";}
     }
 
     function verificar_senha(){
-        var senha = input_senha.value;
+        var senhaServer = input_senha.value;
         confirmar_senha()
 
-        if (senha == "") {
+        if (senhaServer == "") {
             document.getElementById("input_senha").style.borderColor = "black";
-        } else if (senha.length < 8) {
+        } else if (senhaServer.length < 8) {
             document.getElementById("input_senha").style.borderColor = "red";
         } else {document.getElementById("input_senha").style.borderColor = "green";}
     }
 
     function confirmar_senha() {
-        var senha = input_senha.value;
+        var senhaServer = input_senha.value;
         var senha_confirm = input_senha_confirmacao.value;
 
         if (senha_confirm == "") {
             document.getElementById("input_senha_confirmacao").style.borderColor = "black";
-        } else if (senha == senha_confirm) {
+        } else if (senhaServer == senha_confirm) {
             document.getElementById("input_senha_confirmacao").style.borderColor = "green";
         } else {document.getElementById("input_senha_confirmacao").style.borderColor = "red";}
     }
     
     function verificar_nome_e() {
-        var nome_empresa = input_nome_empresa.value;
-        if (nome_empresa == "") {
+        var nome_empresaServer = input_nome_empresa.value;
+        if (nome_empresaServer == "") {
             document.getElementById("input_nome_empresa").style.borderColor = "black";
-        } else if (nome_empresa.length > 2) {
+        } else if (nome_empresaServer.length > 2) {
             document.getElementById("input_nome_empresa").style.borderColor = "green";
         } else {document.getElementById("input_nome_empresa").style.borderColor = "red";}
     }
 
     function verificar_telefone() {
-        var telefone = input_telefone.value;
-        if (telefone == "") {
+        var telefoneServer = input_telefone.value;
+        if (telefoneServer == "") {
             document.getElementById("input_telefone").style.borderColor = "black";
-        } else if (telefone.indexOf("-9", 2) > -1 && telefone.length == 12) {
+        } else if (telefoneServer.indexOf("-9", 2) > -1 && telefoneServer.length == 12) {
             document.getElementById("input_telefone").style.borderColor = "green";
         } else {document.getElementById("input_telefone").style.borderColor = "red";}
     }
 
     function verificar_cnpj() {
-        var cnpj = input_cnpj.value;
+        var cnpjServer = input_cnpj.value;
 
-        if (cnpj == "") {
+        if (cnpjServer == "") {
             document.getElementById("input_cnpj").style.borderColor = "black";
-        } else if (cnpj.indexOf("0001-") > -1 && cnpj.length == 15) {
+        } else if (cnpjServer.indexOf("0001-") > -1 && cnpjServer.length == 15) {
             document.getElementById("input_cnpj").style.borderColor = "green";
         } else {document.getElementById("input_cnpj").style.borderColor = "red";}
     }
 
     function verificar_cpf() {
-        var cpf = input_cpf.value;
+        var cpfServer = input_cpf.value;
 
-        if (cpf == "") {
+        if (cpfServer == "") {
             document.getElementById("input_cpf").style.borderColor = "black";
-        } else if (cpf.indexOf("-") > -1 && cpf.length == 12) {
+        } else if (cpfServer.indexOf("-") > -1 && cpfServer.length == 12) {
             document.getElementById("input_cpf").style.borderColor = "green";
         } else {document.getElementById("input_cpf").style.borderColor = "red";}
     }
 
     
     function verificar_cep() {
-        var cep = input_cep.value;
-        if (cep == "") {
+        var cepServer = input_cep.value;
+        if (cepServer == "") {
             document.getElementById("input_cep").style.borderColor = "black";
-        } else if (cep.indexOf('-') > -1 && cep.length == 9) {
+        } else if (cepServer.indexOf('-') > -1 && cepServer.length == 9) {
             document.getElementById("input_cep").style.borderColor = "green";
         } else {document.getElementById("input_cep").style.borderColor = "red";}
     }
 
     function verificar_rua() {
-        var rua = input_rua.value;
+        var ruaServer = input_rua.value;
 
-        if (rua == "") {
+        if (ruaServer == "") {
             document.getElementById("input_rua").style.borderColor = "black";
-        } else if (rua.length > 5) {
+        } else if (ruaServer.length > 5) {
             document.getElementById("input_rua").style.borderColor = "green";
         } else {document.getElementById("input_rua").style.borderColor = "red";}
     }
     
     function verificar_num() {
-        var num_e = input_numero.value;
+        var num_eServer = input_numero.value;
 
-        if (num_e == "") {
+        if (num_eServer == "") {
             document.getElementById("input_numero").style.borderColor = "black";
-        } else if (num_e.length > 1) {
+        } else if (num_eServer.length > 1) {
             document.getElementById("input_numero").style.borderColor = "green";
         } else {document.getElementById("input_numero").style.borderColor = "red";}
     }
 
 
     function verificar_cidade() {
-        var cidade = input_cidade.value;
-        if (cidade == "") {
+        var cidadeServer = input_cidade.value;
+        if (cidadeServer == "") {
             document.getElementById("input_cidade").style.borderColor = "black";
-        } else if (cidade.length >= 1) {
+        } else if (cidadeServer.length >= 1) {
             document.getElementById("input_cidade").style.borderColor = "green";
         } else {document.getElementById("input_cidade").style.borderColor = "red";}
     }
 
 
     function verificar_estado() {
-        var cidade = input_estado.value;
-        if (cidade == "") {
+        var cidadeServer = input_estado.value;
+        if (cidadeServer == "") {
             document.getElementById("input_estado").style.borderColor = "black";
-        } else if (cidade.length >= 1) {
+        } else if (cidadeServer.length >= 1) {
             document.getElementById("input_estado").style.borderColor = "green";
         } else {document.getElementById("input_estado").style.borderColor = "red";}
     }
 
 
-    function enviar() {
-        var nome = input_nome.value;
-        var sobrenome = input_sobrenome.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var senha_confirm = input_senha_confirmacao.value;
-        var nome_empresa = input_nome_empresa.value;
-        var telefone = input_telefone.value;
-        var cnpj = input_cnpj.value;
-        var cpf = input_cpf.value;
-        var cep = input_cep.value;
-        var num = input_numero.value;
-        var cidade = input_cidade.value;
-        var rua = input_rua.value;
-        var estado = input_estado.value;
+    function cadastrar() {
+        var nomeServer = input_nome.value;
+        var sobrenomeServer = input_sobrenome.value;
+        var emailServer = input_email.value;
+        var senhaServer = input_senha.value;
+        var senha_confirmServer = input_senha_confirmacao.value;
+        var nome_empresaServer = input_nome_empresa.value;
+        var telefoneServer = input_telefone.value;
+        var cnpjServer = input_cnpj.value;
+        var cpfServer = input_cpf.value;
+        var cepServer = input_cep.value;
+        var num_eServer = input_numero.value;
+        var cidadeServer = input_cidade.value;
+        var ruaServer = input_rua.value;
+        var estadoServer = input_estado.value;
 
         // Se os campos estão vazios
-        if (nome == "" || sobrenome == "" || email == "" || senha == "" || nome_empresa == "" || telefone == "" || cnpj == "" || cpf == "" || endereco == "" || cep == "" || num == "" || cidade == "" || rua == "" || estado == "") {
+        if (nomeServer == "" || sobrenomeServer == "" || emailServer == "" || senhaServer == "" || nome_empresaServer == "" || telefoneServer == "" || cnpjServer == "" || cpfServer == "" || enderecoServer == "" || cepServer == "" || num_eServer == "" || cidadeServer == "" || ruaServer == "" || estadoServer == "") {
             alert("Preencha todos os campos");
-        } else if (nome.length <= 3) {
+        } else if (nomeServer.length <= 3) {
             alert("O nome deve ter mais de 2 caracteres");
-        } else if (sobrenome.length < 3) {
+        } else if (sobrenomeServer.length < 3) {
             alert("O sobrenome deve ter mais de 2 caracteres");
-        } else if (email.indexOf("@") == -1 || (email.indexOf("sptech.school") == -1 && email.indexOf(".com") == -1 && email.indexOf(".com.br") == -1)) {
+        } else if (emailServer.indexOf("@") == -1 || (emailServer.indexOf("sptech.school") == -1 && emailServer.indexOf(".com") == -1 && emailServer.indexOf(".com.br") == -1)) {
             alert("E-mail inválido!");
-        } else if (senha.length < 8) {
+        } else if (senhaServer.length < 8) {
             alert("Sua senha deve ter no mínimo 8 caracteres");
-        } else if (senha != senha_confirm) {
+        } else if (senhaServer != senha_confirm) {
             alert(`A confirmação de senha está incorreta`);
-        } else if (telefone.indexOf("-9", 2) == -1 || telefone.length > 12 && telefone.length <= 12) {
+        } else if (telefoneServer.indexOf("-9", 2) == -1 || telefoneServer.length > 12 && telefoneServer.length <= 12) {
             alert("O número deve conter 12 dígitos e '-9' após o DDD")
-        } else if (cnpj.indexOf("0001-") == -1 || cnpj.length > 15 && cnpj.length <= 15) {
+        } else if (cnpjServer.indexOf("0001-") == -1 || cnpjServer.length > 15 && cnpjServer.length <= 15) {
             alert("O CNPJ deve conter 14 dígitos e '0001-' antes dos dois dígitos finais.");
-        } else if (cpf.indexOf("-") == -1 || cpf.length > 12 && cpf.length <= 12) {
+        } else if (cpfServer.indexOf("-") == -1 || cpfServer.length > 12 && cpfServer.length <= 12) {
             alert('O CPF deve conter 11 dígitos e um - antes dos dois dígitos finais.')
-        } else if (cep.indexOf('-') == -1 || cep.length > 9 && cep.length <= 9) {
+        } else if (cepServer.indexOf('-') == -1 || cepServer.length > 9 && cepServer.length <= 9) {
             alert('O CEP deve ter 8 dígitos e conter um - antes dos 3 dígitos finais')
         } else {
-            alert("Cadastro realizado com sucesso!");
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                telefoneServer: telefoneVar,
+                nome_empresaServer: nome_empresaVar,
+                cnpjServer: cnpjVar,
+                cpfServer: cpfVar,
+                cepServer: cepVar,
+                numServer: numVar,
+                cidadeServer: cidadeVar,
+                ruaServer: ruaVar,
+                estadoServer: estadoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`)
+
+                setTimeout(() => {
+                    window.location = "../login/login.html";
+                }, "2000")
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
         }
     }
 </script>
