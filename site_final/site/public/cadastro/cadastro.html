@@ -46,76 +46,97 @@
             </div>
             <div class="formularios">
             <div class="form_box2">
+
+                <!-- Aqui começam os inputs e suas verificações pelo ID 
+                    (a label tinha um "for" da seguinte forma: 
+                    for="input_nome" -- Porém essa classe não era utilizada em lugar algum, por isso foi retirada)
+                -->
+
+
+
+                    <!-- Aqui começa o formulário do usuário, até a confirmação de senha -->
                     <div class="input_group">
-                        <label for="input_nome">Nome <b>*</b></label>
-                        <input onkeyup="verificar_nome()" type="text" name="nome" id="input_nome" placeholder="Seu nome">
+                        <label>Nome <b>*</b></label>
+                        <input type="text" name="nome" id="nome_input" placeholder="Seu nome">
                     </div>
 
                     <div class="input_group ">
-                        <label for="input_sobrenome">Sobrenome <b>*</b></label>
-                        <input onkeyup="verificar_sobrenome()" type="text" name="sobrenome" id="input_sobrenome" placeholder="Sobrenome">
+                        <label>Sobrenome <b>*</b></label>
+                        <input type="text" name="sobrenome" id="sobrenome_input" placeholder="Sobrenome">
                     </div>
+
                 <div class="input_group">
-                    <label for="input_telefone">Telefone <b>*</b></label>
-                    <input onkeyup="verificar_telefone()" type="text" name="telefone" id="input_telefone" placeholder="XX-9XXXXXXXX">
-                </div>
-                <div class="input_group">
-                    <label for="input_CPF">CPF <b>*</b></label>
-                    <input onkeyup="verificar_cpf()" type="text" name="cpf" id="input_cpf" placeholder="000000000-00">
-                </div>
-                <div class="input_group">
-                    <label for="input_email">E-mail <b>*</b></label>
-                    <input onkeyup="verificar_email()" type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                    <label>Telefone <b>*</b></label>
+                    <input type="text" name="telefone" id="telefone_input" placeholder="XX-9XXXXXXXX">
                 </div>
 
                 <div class="input_group">
-                    <label for="input_senha">Senha <b>*</b></label>
-                    <input onkeyup="verificar_senha()" type="password" name="password" id="input_senha" placeholder="No mínimo 8 caracteres">
+                    <label>CPF <b>*</b></label>
+                    <input type="text" name="cpf" id="cpf_input" placeholder="000000000-00">
                 </div>
 
                 <div class="input_group">
-                    <label for="input_senha_confirmacao">Confirmação de senha <b>*</b></label>
-                    <input onkeyup="confirmar_senha()" type="password" name="password" id="input_senha_confirmacao" placeholder="Digite sua senha novamente">
+                    <label>E-mail <b>*</b></label>
+                    <input type="text" name="email" id="email_input" placeholder="nome@exemplo.com">
+                </div>
+
+                <div class="input_group">
+                    <label>Senha <b>*</b></label>
+                    <input type="password" name="password" id="senha_input" placeholder="No mínimo 8 caracteres">
+                </div>
+
+                <div class="input_group">
+                    <label>Confirmação de senha <b>*</b></label>
+                    <input type="password" name="password" id="confirmacao_senha_input" placeholder="Digite sua senha novamente">
                 </div>
             </div>
-            <div class="form_box">
-                
+
+
+
+
+            <!-- Aqui, termina a parte do formulário do usuário, 
+                e começa a parte do formulário da empresa junto ao endereço(???) -->
+
+            <div class="form_box">    
                     <div class="input_group">
-                        <label for="input_nome_empresa">Nome da empresa <b>*</b></label>
-                        <input onkeyup="verificar_nome_e()" type="text" name="nome_empresa" id="input_nome_empresa" placeholder="Nome da empresa">
+                        <label>Nome da empresa <b>*</b></label>
+                        <input type="text" name="nome_empresa" id="nome_empresa_input" placeholder="Nome da empresa">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_cnpj">CNPJ <b>*</b></label>
-                        <input onkeyup="verificar_cnpj()" type="text" name="cnpj" id="input_cnpj" placeholder="XXXXXXXX0001-XX">
+                        <label>CNPJ <b>*</b></label>
+                        <input type="text" name="cnpj" id="cnpj_input" placeholder="XXXXXXXX0001-XX">
                     </div>
                     <div class="input_group">
-                        <label for="input_endereco">Rua <b>*</b></label>
-                        <input onkeyup="verificar_rua()" type="text" name="Endereco" id="input_rua"
+                        <label>Rua <b>*</b></label>
+                        <input type="text" name="rua" id="rua_input"
                             placeholder="Rua da sua empresa">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_cep">CEP <b>*</b></label>
-                        <input onkeyup="verificar_cep()" type="text" name="cep" id="input_cep" placeholder="00000-000">
+                        <label>CEP <b>*</b></label>
+                        <input type="text" name="cep" id="cep_input" placeholder="00000-000">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_numero">Número da sua empresa <b>*</b></label>
-                        <input onkeyup="verificar_num()" type="number" name="numero" id="input_numero" placeholder="123">
+                        <label>Número da sua empresa <b>*</b></label>
+                        <input type="number" name="numero" id="numero_input" placeholder="123">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_cidade">Cidade<b>*</b></label>
-                        <input onkeyup="verificar_cidade()" type="text" name="numero" id="input_cidade" placeholder="São Paulo">
+                        <label>Cidade<b>*</b></label>
+                        <input type="text" name="cidade" id="cidade_input" placeholder="São Paulo">
                     </div>
 
                     <div class="input_group">
-                        <label for="input_cidade">Estado<b>*</b></label>
-                        <input onkeyup="verificar_estado()" type="text" name="estado" id="input_estado" placeholder="SP">
+                        <label>Estado<b>*</b></label>
+                        <input type="text" name="estado" id="estado_input" placeholder="SP">
                     </div>
             </div>
         </div>
+<!-- termina o formulário empresa e endereço-->
+
+
         <div class="input_group">
             <button onclick="cadastrar()">
                 Enviar
@@ -131,6 +152,110 @@
 
 </html>
 
+<script>
+    function cadastrar() {
+        aguardar();
+
+        // Recuperando o valor do ID da INPUT
+        // Após isso ir ao método FETCH abaixo
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value;
+        var telefoneVar = telefone_input.value;
+        var cpfVar = cpf_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var nome_empresaVar = nome_empresa_input.value;
+        var cnpjVar = cnpj_input.value;
+        var ruaVar = rua_input.value;
+        var cepVar = cep_input.value;
+        var numeroVar = numero_input.value;
+        var cidadeVar = cidade_input.value;
+        var estadoVar = estado_input.value;
+
+
+        if (nomeVar == "" || sobrenomeVar == "" || telefoneVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || ruaVar == "" || cepVar == "" || numeroVar == "" || cidadeVar == "" || estadoVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                nomeServer: nomeVar,
+                sobrenomeServer: sobrenomeVar,
+                telefoneServer: telefoneVar,
+                cpfServer: cpfVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                confirmacaoSenhaServer: confirmacaoSenhaVar,
+                nome_empresaServer: nome_empresaVar,
+                cnpjServer: cnpjVar,
+                ruaServer: ruaVar,
+                cepServer: cepVar,
+                numeroServer: numeroVar,
+                cidadeServer: cidadeVar,
+                estadoServer: estadoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- VERIFICAÇÕES ANTIGAS COMENTADAS ABAIXO POR MOTIVOS DE:
+A lógica apresentada funciona, algumas coisas apresentam erros, outras simplesmente 
+confunde e entra em conflito com os arquivos da API.
+JS ESTÁ EXTREMAMENTE EXTENSO -->
+<!-- 
 <script>
     function verificar_nome() {
         var nomeServer = input_nome.value;
@@ -354,4 +479,4 @@
         return false;
         }
     }
-</script>
+</script> -->
