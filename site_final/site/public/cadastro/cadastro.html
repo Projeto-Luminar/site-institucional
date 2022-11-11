@@ -153,111 +153,9 @@
 </html>
 
 <script>
-    function cadastrar() {
-        aguardar();
-
-        // Recuperando o valor do ID da INPUT
-        // Após isso ir ao método FETCH abaixo
-        var nomeVar = nome_input.value;
-        var sobrenomeVar = sobrenome_input.value;
-        var telefoneVar = telefone_input.value;
-        var cpfVar = cpf_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var nome_empresaVar = nome_empresa_input.value;
-        var cnpjVar = cnpj_input.value;
-        var ruaVar = rua_input.value;
-        var cepVar = cep_input.value;
-        var numeroVar = numero_input.value;
-        var cidadeVar = cidade_input.value;
-        var estadoVar = estado_input.value;
 
 
-        if (nomeVar == "" || sobrenomeVar == "" || telefoneVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || ruaVar == "" || cepVar == "" || numeroVar == "" || cidadeVar == "" || estadoVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // Colocar o nome da variável que foi criada acima
-                // Agora vá para o arquivo routes/usuario.js (EM src)
-                nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
-                telefoneServer: telefoneVar,
-                cpfServer: cpfVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                confirmacaoSenhaServer: confirmacaoSenhaVar,
-                nome_empresaServer: nome_empresaVar,
-                cnpjServer: cnpjVar,
-                ruaServer: ruaVar,
-                cepServer: cepVar,
-                numeroServer: numeroVar,
-                cidadeServer: cidadeVar,
-                estadoServer: estadoVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-                
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<!-- VERIFICAÇÕES ANTIGAS COMENTADAS ABAIXO POR MOTIVOS DE:
-A lógica apresentada funciona, algumas coisas apresentam erros, outras simplesmente 
-confunde e entra em conflito com os arquivos da API.
-JS ESTÁ EXTREMAMENTE EXTENSO -->
-<!-- 
-<script>
-    function verificar_nome() {
+function verificar_nome() {
         var nomeServer = input_nome.value;
         if (nomeServer == "") {
             document.getElementById("input_nome").style.borderColor = "black"
@@ -309,153 +207,159 @@ JS ESTÁ EXTREMAMENTE EXTENSO -->
     }
     
     function verificar_nome_e() {
-        var nome_empresaServer = input_nome_empresa.value;
-        if (nome_empresaServer == "") {
+        var nome_empresaVar = input_nome_empresa.value;
+        if (nome_empresaVar == "") {
             document.getElementById("input_nome_empresa").style.borderColor = "black";
-        } else if (nome_empresaServer.length > 2) {
+        } else if (nome_empresaVar.length > 2) {
             document.getElementById("input_nome_empresa").style.borderColor = "green";
         } else {document.getElementById("input_nome_empresa").style.borderColor = "red";}
     }
 
     function verificar_telefone() {
-        var telefoneServer = input_telefone.value;
-        if (telefoneServer == "") {
+        var telefoneVar = input_telefone.value;
+        if (telefoneVar == "") {
             document.getElementById("input_telefone").style.borderColor = "black";
-        } else if (telefoneServer.indexOf("-9", 2) > -1 && telefoneServer.length == 12) {
+        } else if (telefoneVar.indexOf("-9", 2) > -1 && telefoneServer.length == 12) {
             document.getElementById("input_telefone").style.borderColor = "green";
         } else {document.getElementById("input_telefone").style.borderColor = "red";}
     }
 
     function verificar_cnpj() {
-        var cnpjServer = input_cnpj.value;
+        var cnpjVar = input_cnpj.value;
 
-        if (cnpjServer == "") {
+        if (cnpjVar == "") {
             document.getElementById("input_cnpj").style.borderColor = "black";
-        } else if (cnpjServer.indexOf("0001-") > -1 && cnpjServer.length == 15) {
+        } else if (cnpjVar.indexOf("0001-") > -1 && cnpjVar.length == 15) {
             document.getElementById("input_cnpj").style.borderColor = "green";
         } else {document.getElementById("input_cnpj").style.borderColor = "red";}
     }
 
     function verificar_cpf() {
-        var cpfServer = input_cpf.value;
+        var cpfVar = input_cpf.value;
 
-        if (cpfServer == "") {
+        if (cpfVar == "") {
             document.getElementById("input_cpf").style.borderColor = "black";
-        } else if (cpfServer.indexOf("-") > -1 && cpfServer.length == 12) {
+        } else if (cpfVar.indexOf("-") > -1 && cpfVar.length == 12) {
             document.getElementById("input_cpf").style.borderColor = "green";
         } else {document.getElementById("input_cpf").style.borderColor = "red";}
     }
 
     
     function verificar_cep() {
-        var cepServer = input_cep.value;
-        if (cepServer == "") {
+        var cepVar = input_cep.value;
+        if (cepVar == "") {
             document.getElementById("input_cep").style.borderColor = "black";
-        } else if (cepServer.indexOf('-') > -1 && cepServer.length == 9) {
+        } else if (cepVar.indexOf('-') > -1 && cepVar.length == 9) {
             document.getElementById("input_cep").style.borderColor = "green";
         } else {document.getElementById("input_cep").style.borderColor = "red";}
     }
 
     function verificar_rua() {
-        var ruaServer = input_rua.value;
+        var ruaVar = input_rua.value;
 
-        if (ruaServer == "") {
+        if (ruaVar == "") {
             document.getElementById("input_rua").style.borderColor = "black";
-        } else if (ruaServer.length > 5) {
+        } else if (ruaVar.length > 5) {
             document.getElementById("input_rua").style.borderColor = "green";
         } else {document.getElementById("input_rua").style.borderColor = "red";}
     }
     
     function verificar_num() {
-        var num_eServer = input_numero.value;
+        var num_eVar = input_numero.value;
 
-        if (num_eServer == "") {
+        if (num_eVar == "") {
             document.getElementById("input_numero").style.borderColor = "black";
-        } else if (num_eServer.length > 1) {
+        } else if (num_eVar.length > 1) {
             document.getElementById("input_numero").style.borderColor = "green";
         } else {document.getElementById("input_numero").style.borderColor = "red";}
     }
 
 
     function verificar_cidade() {
-        var cidadeServer = input_cidade.value;
-        if (cidadeServer == "") {
+        var cidadeVar = input_cidade.value;
+        if (cidadeVar == "") {
             document.getElementById("input_cidade").style.borderColor = "black";
-        } else if (cidadeServer.length >= 1) {
+        } else if (cidadeVar.length >= 1) {
             document.getElementById("input_cidade").style.borderColor = "green";
         } else {document.getElementById("input_cidade").style.borderColor = "red";}
     }
 
 
     function verificar_estado() {
-        var cidadeServer = input_estado.value;
-        if (cidadeServer == "") {
+        var estadoVar = input_estado.value;
+        if (estadoVar == "") {
             document.getElementById("input_estado").style.borderColor = "black";
-        } else if (cidadeServer.length >= 1) {
+        } else if (estadoVar.length >= 1) {
             document.getElementById("input_estado").style.borderColor = "green";
         } else {document.getElementById("input_estado").style.borderColor = "red";}
     }
 
 
     function cadastrar() {
-        var nomeServer = input_nome.value;
-        var sobrenomeServer = input_sobrenome.value;
-        var emailServer = input_email.value;
-        var senhaServer = input_senha.value;
-        var senha_confirmServer = input_senha_confirmacao.value;
-        var nome_empresaServer = input_nome_empresa.value;
-        var telefoneServer = input_telefone.value;
-        var cnpjServer = input_cnpj.value;
-        var cpfServer = input_cpf.value;
-        var cepServer = input_cep.value;
-        var num_eServer = input_numero.value;
-        var cidadeServer = input_cidade.value;
-        var ruaServer = input_rua.value;
-        var estadoServer = input_estado.value;
 
-        // Se os campos estão vazios
-        if (nomeServer == "" || sobrenomeServer == "" || emailServer == "" || senhaServer == "" || nome_empresaServer == "" || telefoneServer == "" || cnpjServer == "" || cpfServer == "" || enderecoServer == "" || cepServer == "" || num_eServer == "" || cidadeServer == "" || ruaServer == "" || estadoServer == "") {
-            alert("Preencha todos os campos");
-        } else if (nomeServer.length <= 3) {
+        // Recuperando o valor do ID da INPUT
+        // Após isso ir ao método FETCH abaixo
+        var nomeVar = nome_input.value;
+        var sobrenomeVar = sobrenome_input.value;
+        var telefoneVar = telefone_input.value;
+        var cpfVar = cpf_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var nome_empresaVar = nome_empresa_input.value;
+        var cnpjVar = cnpj_input.value;
+        var ruaVar = rua_input.value;
+        var cepVar = cep_input.value;
+        var numeroVar = numero_input.value;
+        var cidadeVar = cidade_input.value;
+        var estadoVar = estado_input.value;
+
+
+        if (nomeVar == "" || sobrenomeVar == "" || telefoneVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || ruaVar == "" || cepVar == "" || numeroVar == "" || cidadeVar == "" || estadoVar == "") {
+            
+            alert(`Preeencha todos os campos!`);
+
+            return false;
+        } else if (nomeVar.length <= 3) {
             alert("O nome deve ter mais de 2 caracteres");
-        } else if (sobrenomeServer.length < 3) {
+        } else if (sobrenomeVar.length < 3) {
             alert("O sobrenome deve ter mais de 2 caracteres");
-        } else if (emailServer.indexOf("@") == -1 || (emailServer.indexOf("sptech.school") == -1 && emailServer.indexOf(".com") == -1 && emailServer.indexOf(".com.br") == -1)) {
+        } else if (emailVar.indexOf("@") == -1 || (emailVar.indexOf("sptech.school") == -1 && emailVar.indexOf(".com") == -1 && emailServer.indexOf(".com.br") == -1)) {
             alert("E-mail inválido!");
-        } else if (senhaServer.length < 8) {
+        } else if (senhaVar.length < 8) {
             alert("Sua senha deve ter no mínimo 8 caracteres");
-        } else if (senhaServer != senha_confirm) {
+        } else if (senhaVar != confirmacaoSenhaVar) {
             alert(`A confirmação de senha está incorreta`);
-        } else if (telefoneServer.indexOf("-9", 2) == -1 || telefoneServer.length > 12 && telefoneServer.length <= 12) {
+        } else if (telefoneVar.indexOf("-9", 2) == -1 || telefoneVar.length > 12 && telefoneVar.length <= 12) {
             alert("O número deve conter 12 dígitos e '-9' após o DDD")
-        } else if (cnpjServer.indexOf("0001-") == -1 || cnpjServer.length > 15 && cnpjServer.length <= 15) {
+        } else if (cnpjVar.indexOf("0001-") == -1 || cnpjVar.length > 15 && cnpjVar.length <= 15) {
             alert("O CNPJ deve conter 14 dígitos e '0001-' antes dos dois dígitos finais.");
-        } else if (cpfServer.indexOf("-") == -1 || cpfServer.length > 12 && cpfServer.length <= 12) {
+        } else if (cpfVar.indexOf("-") == -1 || cpfVar.length > 12 && cpfVar.length <= 12) {
             alert('O CPF deve conter 11 dígitos e um - antes dos dois dígitos finais.')
-        } else if (cepServer.indexOf('-') == -1 || cepServer.length > 9 && cepServer.length <= 9) {
+        } else if (cepVar.indexOf('-') == -1 || cepVar.length > 9 && cepVar.length <= 9) {
             alert('O CEP deve ter 8 dígitos e conter um - antes dos 3 dígitos finais')
-        } else {
-            // Enviando o valor da nova input
-            fetch("/usuarios/cadastrar", {
+        }else {
+         // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
                 nomeServer: nomeVar,
                 sobrenomeServer: sobrenomeVar,
+                telefoneServer: telefoneVar,
+                cpfServer: cpfVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                telefoneServer: telefoneVar,
                 nome_empresaServer: nome_empresaVar,
                 cnpjServer: cnpjVar,
-                cpfServer: cpfVar,
-                cepServer: cepVar,
-                numServer: numVar,
-                cidadeServer: cidadeVar,
                 ruaServer: ruaVar,
+                cepServer: cepVar,
+                numeroServer: numeroVar,
+                cidadeServer: cidadeVar,
                 estadoServer: estadoVar
             })
         }).then(function (resposta) {
@@ -464,11 +368,10 @@ JS ESTÁ EXTREMAMENTE EXTENSO -->
 
             if (resposta.ok) {
 
-                alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`)
-
                 setTimeout(() => {
                     window.location = "../login/login.html";
                 }, "2000")
+        
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -476,7 +379,7 @@ JS ESTÁ EXTREMAMENTE EXTENSO -->
             console.log(`#ERRO: ${resposta}`);
         });
 
-        return false;
+        return false;   
         }
     }
-</script> -->
+</script>
