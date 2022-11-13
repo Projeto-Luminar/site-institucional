@@ -2,101 +2,117 @@
 <html lang="ptbr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo_dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="shortcut icon" href="./assets/luz.png" type="image/x-icon">
-    <title>Luminar - Dashboard</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo_dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="shortcut icon" href="./assets/luz.png" type="image/x-icon">
+  <title>Luminar - Dashboard</title>
 </head>
 
 <body>
-    <div class="menu-dashboard">
-        <div class="logo-luminar">
-            <img src="./assets/logoLuminar.png" alt="Logo Luminar" width="120px" />
-        </div>
-        <div class="principal-menu">
-            <div class="home-item-menu">
-                <a href="../Tela_dashboard/home_dashboard.html">
-                    <img src="./assets/botao-de-inicio.png" alt="Item Home do menu" width="25px">
-                    <p> Home</p>
-                </a>
-            </div>
-
-            <div class="dashboard-item-menu">
-              <a href="../Tela_dashboard/home_dashboard.html">
-                  <img src="../Tela_dashboard/assets/icone_dashboard.png" alt="Item dashboard do menu" width="25px">
-                  <p> Dashboard</p>
-              </a>
-          </div>
-
-            <div class="perfil-item-menu">
-                <a href="">
-                    <img src="./assets/perfil-de-usuario.png" alt="Item Perfil do menu" width="25px">
-                    <p>Perfil</p>
-                </a>
-                <div class="itens-perfil">
-                    <p>Empresa: XXXX</p>
-                    <p>Funcionário: XXXX</p>
-                    <p>Setor: XXXX</p>
-                    <p>Andar: XXXX</p>
-                </div>
-            </div>
-        </div>
-        <div class="importante-menu">
-            <div class="config-item-menu">
-                <a href="">
-                    <img src="./assets/configuracoes-cog.png" alt="Item Configurações do menu" width="25px">
-                    <p>Configurações</p>
-                </a>
-            </div>
-            <div class="sair-item-menu">
-                <a href="../index.html">
-                    <img src="./assets/power-off.png" alt="Item Sair do menu" width="25px">
-                    <p>Sair</p>
-                </a>
-            </div>
-        </div>
+  <div class="menu-dashboard">
+    <div class="logo-luminar">
+      <img src="./assets/logoLuminar.png" alt="Logo Luminar" width="120px" />
     </div>
-    <div class="dashboards">
-        <div class="kpis">
-          <div class="kpi"><span >Lux/ Iluminação</span>  
-            <h1 style="color:#008037;">582</h1> 
-            <h5 class="kpitexto">ILUMINAÇÃO MÉDIA ATUAL</h5>
-                 <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da atualização</span>
-          </div>
-          <div class="kpi"><span>Lux/ Iluminação</span> 
-            <h1 style="color: #FF1616;">800</h1> 
-            <h5 class="kpitexto">ACIMA DO IDEAL REGISTRADA</h5>
-                 <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png " alt=""> Data e hora da atualização</span>
-          </div>
-          <div class="kpi"><span>Lux/ Iluminação</span> 
-            <h1 style="color: #004AAD;">100</h1> 
-            <h5 class="kpitexto">ABAIXO DO IDEAL REGISTRADO</h5>
-                 <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da atualização</span>
-          </div>
-          <div class="kpi"><span>Alertas</span> 
-            <h1 style="color: #000;">6</h1> 
-            <h5 class="kpitexto">QUANTIDADE REGISTRADO</h5>
-                 <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da atualização</span>
-          </div>
+    <div class="principal-menu">
+      <div class="home-item-menu">
+        <a href="../Tela_dashboard/home_dashboard.html">
+          <img src="./assets/botao-de-inicio.png" alt="Item Home do menu" width="25px">
+          <p> Home</p>
+        </a>
+      </div>
+
+      <div class="dashboard-item-menu">
+        <a href="../Tela_dashboard/home_dashboard.html">
+          <img src="../Tela_dashboard/assets/icone_dashboard.png" alt="Item dashboard do menu" width="25px">
+          <p> Dashboard</p>
+        </a>
+      </div>
+
+      <div class="perfil-item-menu">
+        <a href="">
+          <img src="./assets/perfil-de-usuario.png" alt="Item Perfil do menu" width="25px">
+          <p>Perfil</p>
+        </a>
+        <div class="itens-perfil">
+          <p>Empresa: XXXX</p>
+          <p>Funcionário: XXXX</p>
+          <!-- (admin ou comum) -->
+          <p>Permissão: XXXX</p>
+          <p>Andar: XXXX</p>
         </div>
-        <div class="graficos">
-          <div class="div_status_sala">SALA 1 - Situação: IDEAL </div>
-            <div class="div_chart01">
-              <div class="chart01">
-              <canvas id="myChart1"></canvas>
-              </div>
-            </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <!-- Só deve mostrar caso o usuário seja do tipo admin -->
+    <div class="buttons-menu">
+      <div class="btn-cadastrar-usuários">
+        <a href="./cadastro_funcionario.html">Cadastrar funcionário</a>
+      </div>
+      <div class="btn-cadastrar-salas">
+        <a href="./cadastro_sala.html">Cadastrar sala</a>
+      </div>
+    </div>
+
+    <div class="importante-menu">
+      <div class="config-item-menu">
+        <a href="">
+          <img src="./assets/configuracoes-cog.png" alt="Item Configurações do menu" width="25px">
+          <p>Configurações</p>
+        </a>
+      </div>
+      <div class="sair-item-menu">
+        <a href="../index.html">
+          <img src="./assets/power-off.png" alt="Item Sair do menu" width="25px">
+          <p>Sair</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="dashboards">
+    <div class="kpis">
+      <div class="kpi"><span>Lux/ Iluminação</span>
+        <h1 style="color:#008037;">582</h1>
+        <h5 class="kpitexto">ILUMINAÇÃO MÉDIA ATUAL</h5>
+        <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da
+          atualização</span>
+      </div>
+      <div class="kpi"><span>Lux/ Iluminação</span>
+        <h1 style="color: #FF1616;">800</h1>
+        <h5 class="kpitexto">ACIMA DO IDEAL REGISTRADA</h5>
+        <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png " alt=""> Data e hora da
+          atualização</span>
+      </div>
+      <div class="kpi"><span>Lux/ Iluminação</span>
+        <h1 style="color: #004AAD;">100</h1>
+        <h5 class="kpitexto">ABAIXO DO IDEAL REGISTRADO</h5>
+        <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da
+          atualização</span>
+      </div>
+      <div class="kpi"><span>Alertas</span>
+        <h1 style="color: #000;">6</h1>
+        <h5 class="kpitexto">QUANTIDADE REGISTRADO</h5>
+        <span class="texto_relogio"><img style="height:12px;" src="assets/relogio.png" alt=""> Data e hora da
+          atualização</span>
+      </div>
+    </div>
+    <div class="graficos">
+      <div class="div_status_sala">SALA 1 - Situação: IDEAL </div>
+      <div class="div_chart01">
+        <div class="chart01">
+          <canvas id="myChart1"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
 </body>
 
 <script>
-      const labels = [
+  const labels = [
     '10:00',
     '10:30',
     '11:00',
@@ -111,19 +127,19 @@
       label: 'Luminosidade | Sensor 1',
       backgroundColor: 'red',
       borderColor: '#FF1616',
-      data: [500, 500, 480, 700, 750, 600 ],
+      data: [500, 500, 480, 700, 750, 600],
     },
     {
       label: 'Luminosidade| Sensor 2',
       backgroundColor: '#0000FF',
       borderColor: '#0000FF',
-      data: [500, 500, 600, 710, 590, 600 ],
+      data: [500, 500, 600, 710, 590, 600],
     },
     {
       label: 'Luminosidade| Sensor 3',
       backgroundColor: '#008000',
       borderColor: '#008000',
-      data: [570, 520, 670, 700, 550, 550 ],
+      data: [570, 520, 670, 700, 550, 550],
     },
     {
       label: 'Luminosidade| Sensor 4',
@@ -131,7 +147,7 @@
       borderColor: '#FFFF00',
       data: [500, 500, 600, 500, 600, 500],
     }
-  ]
+    ]
   };
 
   const config1 = {

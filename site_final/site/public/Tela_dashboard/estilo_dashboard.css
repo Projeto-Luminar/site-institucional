@@ -25,7 +25,7 @@
         flex-direction: column;
         background-color: #000235;
         height: 100%;
-        width: 25%;
+        width: 20%;
         padding: 2% 4%;
         font-family: 'Roboto', sans-serif;
         color: #FAF9FF;
@@ -51,24 +51,28 @@
     }
 
     .principal-menu{
-        height: 85%;
+        height: 60%;
     }
-
+    
     .importante-menu{
         height: 15%;
     }
-
+    
     .principal-menu a{
         margin-top: 50px;
     }
-
+    
     .importante-menu a{
         margin-top: 10px;
     }
-
+    
     .principal-menu a p:hover{
         border-bottom: 2px solid #FFFA86;
         font-weight: bold;
+    }
+    
+    .buttons-menu{
+      height: 20%;
     }
 
     .sair-item-menu a p:hover{
@@ -84,6 +88,38 @@
         font-size: 13px;
         color: #FAF9FF;
     }
+
+    .btn-cadastrar-usuários{
+        text-align: center;
+        background-color: #FFFA86;
+        border: solid 1px #FFFA86;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .btn-cadastrar-usuários a{
+        color:#000235;
+        padding: 1px 2px 0 8px;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+      }
+      
+      .btn-cadastrar-salas{
+        text-align: center;
+        background-color: #8181D7;
+        border: solid 1px #8181D7;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .btn-cadastrar-salas a{
+        color:#000235;
+        padding: 1px 2px 0 30px;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+      }
 
     .importante-menu a p:hover{
         font-weight: bold;

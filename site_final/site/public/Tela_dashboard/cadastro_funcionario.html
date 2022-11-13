@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_cadastro_funcionario.css">
+    <link rel="shortcut icon" href="./assets/luz.png" type="image/x-icon">
+    <title>Luminar - Dashboard</title>
+</head>
+
+<body>
+    <div class="menu-dashboard">
+        <div class="logo-luminar">
+            <img src="./assets/logoLuminar.png" alt="Logo Luminar" width="120px" />
+        </div>
+        <div class="principal-menu">
+            <div class="home-item-menu">
+                <a href="../Tela_dashboard/home_dashboard.html">
+                    <img src="./assets/botao-de-inicio.png" alt="Item Home do menu" width="25px">
+                    <p> Home</p>
+                </a>
+            </div>
+
+            <div class="dashboard-item-menu">
+                <a href="../Tela_dashboard/home_dashboard.html">
+                    <img src="../Tela_dashboard/assets/icone_dashboard.png" alt="Item dashboard do menu" width="25px">
+                    <p> Dashboard</p>
+                </a>
+            </div>
+
+            <div class="perfil-item-menu">
+                <a href="">
+                    <img src="./assets/perfil-de-usuario.png" alt="Item Perfil do menu" width="25px">
+                    <p>Perfil</p>
+                </a>
+                <div class="itens-perfil">
+                    <p>Empresa: XXXX</p>
+                    <p>Funcionário: XXXX</p>
+                    <!-- (admin ou comum) -->
+                    <p>Permissão: XXXX</p>
+                    <p>Andar: XXXX</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Só deve mostrar caso o usuário seja do tipo admin -->
+        <div class="buttons-menu">
+            <div class="btn-cadastrar-usuários">
+                <a href="./cadastro_funcionario.html">Cadastrar funcionário</a>
+            </div>
+            <div class="btn-cadastrar-salas">
+                <a href="./cadastro_sala.html">Cadastrar sala</a>
+            </div>
+        </div>
+
+        <div class="importante-menu">
+            <div class="config-item-menu">
+                <a href="">
+                    <img src="./assets/configuracoes-cog.png" alt="Item Configurações do menu" width="25px">
+                    <p>Configurações</p>
+                </a>
+            </div>
+            <div class="sair-item-menu">
+                <a href="../index.html">
+                    <img src="./assets/power-off.png" alt="Item Sair do menu" width="25px">
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-cadastro-funcionario">
+        <span>Cadastre um novo funcionário</span>
+        <div class="nome-tipo-cadastro-funcionario">
+            <div class="nome-cadastro-funcionario">
+                <label for="input_nome" class="label-geral">Nome</label>
+                <input type="text" class="input-nome input-geral" id="input_nome"
+                    placeholder="Digite o nome completo do funcionário">
+            </div>
+            <div class="tipo-cadastro-funcionario">
+                <label class="label-geral">Tipo</label>
+                <div class="radios">
+                    <div class="radio-admin">
+                        <input type="radio" id="admin" name="tipo_funcionario" value="Admin">
+                        <label for="admin">Admin</label><br>
+                    </div>
+                    <div class="radio-comum">
+                        <input type="radio" id="comum" name="tipo_funcionario" value="Comum">
+                        <label for="comum">Comum</label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="email-cadastro-funcionario">
+            <label for="input_email" class="label-geral">E-mail</label>
+            <input type="email" class="input-email input-geral" id="input_email"
+                placeholder="Digite o e-mail do funcionário">
+        </div>
+        <div class="senha-confirm-cadastro-funcionario">
+            <div class="senha-cadastro-funcionario">
+                <label for="input_senha" class="label-geral">Senha</label>
+                <input type="password" class="input-senha input-geral" id="input_senha" placeholder="Digite uma senha">
+            </div>
+            <div class="confirm-senha-cadastro-funcionario">
+                <label class="label-geral" for="input_confirm_senha">Confirme sua senha</label>
+                <input type="password" class="input-confirm-senha input-geral" id="input_confirm_senha"
+                    placeholder="Digite a mesma senha novamente">
+            </div>
+        </div>
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+</body>
+
+</html>

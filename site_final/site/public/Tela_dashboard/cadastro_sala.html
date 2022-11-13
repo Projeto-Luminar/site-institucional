@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_cadastro_sala.css">
+    <link rel="shortcut icon" href="./assets/luz.png" type="image/x-icon">
+    <title>Luminar - Dashboard</title>
+</head>
+
+<body>
+    <div class="menu-dashboard">
+        <div class="logo-luminar">
+            <img src="./assets/logoLuminar.png" alt="Logo Luminar" width="120px" />
+        </div>
+        <div class="principal-menu">
+            <div class="home-item-menu">
+                <a href="../Tela_dashboard/home_dashboard.html">
+                    <img src="./assets/botao-de-inicio.png" alt="Item Home do menu" width="25px">
+                    <p> Home</p>
+                </a>
+            </div>
+
+            <div class="dashboard-item-menu">
+                <a href="../Tela_dashboard/home_dashboard.html">
+                    <img src="../Tela_dashboard/assets/icone_dashboard.png" alt="Item dashboard do menu" width="25px">
+                    <p> Dashboard</p>
+                </a>
+            </div>
+
+            <div class="perfil-item-menu">
+                <a href="">
+                    <img src="./assets/perfil-de-usuario.png" alt="Item Perfil do menu" width="25px">
+                    <p>Perfil</p>
+                </a>
+                <div class="itens-perfil">
+                    <p>Empresa: XXXX</p>
+                    <p>Funcionário: XXXX</p>
+                    <!-- (admin ou comum) -->
+                    <p>Permissão: XXXX</p>
+                    <p>Andar: XXXX</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Só deve mostrar caso o usuário seja do tipo admin -->
+        <div class="buttons-menu">
+            <div class="btn-cadastrar-usuários">
+                <a href="./cadastro_funcionario.html">Cadastrar funcionário</a>
+            </div>
+            <div class="btn-cadastrar-salas">
+                <a href="./cadastro_sala.html">Cadastrar sala</a>
+            </div>
+        </div>
+
+        <div class="importante-menu">
+            <div class="config-item-menu">
+                <a href="">
+                    <img src="./assets/configuracoes-cog.png" alt="Item Configurações do menu" width="25px">
+                    <p>Configurações</p>
+                </a>
+            </div>
+            <div class="sair-item-menu">
+                <a href="../index.html">
+                    <img src="./assets/power-off.png" alt="Item Sair do menu" width="25px">
+                    <p>Sair</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-cadastro-sala">
+        <span>Cadastre uma nova sala</span>
+        <div class="nome-cadastro-sala">
+            <label for="input_nome_sala" class="label-geral">Nome da sala</label>
+            <input type="text" class="input-nome-sala input-geral" id="input_nome_sala" placeholder="Digite o nome da sala">
+        </div>
+        <div class="tamanho-andar-cadastro-sala">
+            <div class="metros-quadrados-cadastro-sala">
+                <label for="input_metros_sala" class="label-geral">Tamanho</label>
+                <input type="number" class="input-metros-sala input-geral" id="input_metros_sala" placeholder="Digite o tamanho da sala em metros quadrados">
+            </div>
+            <div class="andar-cadastro-sala">
+                <label class="label-geral" for="input_andar_sala">Andar</label>
+                <input type="number" class="input-andar-sala input-geral" id="input_andar_sala"
+                    placeholder="Digite o número do andar da sala">
+            </div>
+        </div>
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+</body>
+
+</html>
