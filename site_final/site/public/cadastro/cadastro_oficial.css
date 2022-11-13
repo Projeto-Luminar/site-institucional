@@ -4,14 +4,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
     background-color: #000235;
+    font-family: 'Roboto', sans-serif;
 }
 
-header{
+header {
     z-index: 30;
     position: fixed;   
     width: 100%;
@@ -20,13 +20,13 @@ header{
     background-color:#000117;
 }
 
-.linha-header{
+.linha-header {
     margin: 0;
     height: 4px;
     background-color: #8181D7;
 }
 
-.header-luminar{
+.header-luminar {
     display: flex;
     width: 100%;
     margin: 0;
@@ -36,11 +36,11 @@ header{
     justify-content: space-between;
 }
 
-.logo-luminar{
+.logo-luminar {
     width: 20%;
 }
 
-nav{
+nav {
     font-family: 'Roboto', sans-serif;
     margin: 0 10%;
     width: 60%;
@@ -48,27 +48,27 @@ nav{
 }
 
 
-nav ul{
+nav ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
 }
 
-nav ul li{
+nav ul li {
     justify-content: space-between;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: #FAF9FF;
 }
 
-nav a:hover{
+nav a:hover {
     border-bottom: 4px solid #FFFA86;
     font-weight: bold;
 }
 
-.container_login{
+.container_login {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -76,7 +76,7 @@ nav a:hover{
     align-items: center;
 }
 
-.btn-login-cadastro{
+.btn-login-cadastro {
     display: flex;
     flex-direction: row;
     width: 20%;
@@ -86,7 +86,7 @@ nav a:hover{
     cursor: pointer;
 }
 
-.btn-login{
+.btn-login {
     margin-right: 10px;
     display: inline-block;
     border: solid 3px #AAD8D8;
@@ -100,11 +100,12 @@ nav a:hover{
     text-align: center;
     cursor: pointer;
 }
-.btn-login:hover{
-    border: solid 3px #FAF9FF
+
+.btn-login:hover {
+    border: solid 3px #FAF9FF;
 }
 
-.btn-cadastro{
+.btn-cadastro {
     display: inline-block;
     background-color: #FFFA86;
     border: solid 3px #FFFA86;
@@ -124,158 +125,208 @@ nav a:hover{
     border: solid 3px #FAF9FF;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+
+.container_cadastro {
+    width: 100%;
+    height: 130vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
     justify-content: center;
-    height: 100%;
+    align-items: center;
 }
 
-.titulo {
-    color: #32b9cd;
+.box_left{
+    margin: 0 30px;
+}
+
+.texto_box_left h2{
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.texto_box_left p{
+    font-weight: 500;
+    text-align: center;
     font-size: 14px;
 }
 
-.navegacao {
-    width: 350px;
-    color: #efb661;
+.texto_box_left b {
+    color: #D9A557;
 }
 
-.navegacao a {
-    color:#efb661;
-    text-decoration: none;
+.input_group b {
+    color: #D9A557;
 }
-.navegacao ul {
-    list-style: none;
+
+.box_cad {
     display: flex;
-    justify-content: space-between;
-}
-
-.navegacao ul li {
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.agora {
-    font-weight: bold;
-}
-
-.box_login {
-    display: flex;
-    max-height: 80%;
     background-color: white;
-    padding: 0px 40px;
-    width: 50%;
+    padding: 25px 20px;
+    width: 70%;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 20px;
 }
 
-
-
-.div_img {
+.img_box {
     background-color: white;
     width: 60%;
     display: flex;
     align-items: center;
-    padding: 15px;
-    border-radius: 0 20px 20px ;
+    border-radius: 20px 0 0 20px;
 }
 
-.div_img img {
-    width: 100%;
+.img_box img {
+    width: 280px;
 }
 
-.div_forms {
+.form_box {
+    padding: 20px 40px;
     background-color: white;
-    padding: 0px 40px;
-    width: 60%;
+    width: 70%;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 0 20px 20px 0;  
-    height: 80%;
+    border-radius: 0 20px 20px 0;
 }
 
-.div_forms h2 {
+.form_box h2 {
     font-size: 23px;
-    padding-top: 25px;
 }
 
-.div_forms h4{
-    padding-top: 10px;
+.form_box h4 {
+    padding-top: 5px;
     padding-bottom: 8px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-.div_forms b {
-    color: #D9A557;
-}
-.div_forms h2{
-    text-align: center;
+.form_box p {
+    font-size: 10px;
 }
 
-.div_forms h2 b a{
+.form_box p a {
     text-decoration: none;
-    color: #d9a557;
+    color: #0461CF;
 }
 
-.div_email_senha {
-    margin-top: 15px;
+.form_box form {
+    margin: 20px 0;
+}
+
+.dados-empresa{
+    padding-bottom: 2vh;
+}
+
+.dados-empresa p{
+    font-size: 14px;
+}
+
+.dados-funcionario{
+    margin-top: 9px;
+    padding: 2vh 0;
+}
+
+.dados-funcionario p{
+    font-size: 14px;
+}
+
+.telefone-cnpj{
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    gap: 15px;
 }
 
-.div_forms .div_email_senha label {
+.cnpj{
+    width: 60%;
+}
+
+.telefone{
+    width: 40%;
+}
+
+.cep-numero{
+    display: flex;
+    gap: 15px;
+}
+
+.cep{
+    width: 60%;
+}
+
+.numero{
+    width: 40%;
+}
+
+.senha-confirmacaoSenha{
+    display: flex;
+    gap: 15px;
+}
+
+.senha{
+    width: 50%;
+}
+
+.confirmacao-senha{
+    width: 50%;
+}
+
+.form_box .input_group label {
+    font-size: 13px;
     font-weight: bold;
     padding: 5px;
     margin-bottom: 5px;
-    padding-bottom:0px;
+    padding-bottom: 0px;
     padding-top: 5px;
     display: block;
 }
 
-.div_forms .div_email_senha input {
-    padding: 10px;
+.form_box .input_group input {
+    margin: 2px 0;
+    padding: 8px;
     border-radius: 10px;
-    border: 2px solid;
+    border: 1px solid;
     text-align: center;
     outline: none;
+    height: 30px;
     width: 100%;
     justify-content: center;
 }
 
-.button_login {
+.frase-experiencia {
+    text-align: center;
+    margin-top: 5px;
+    color: #D9A557;
+    font-weight: bold;
+}
+
+
+button {
     width: 100%;
-    height: 47px;
+    height: 30px;
     background: #0461CF;
     border-radius: 20px;
     outline: none;
     border: none;
-    margin-top: 13px;
+    margin-top: 25px;
     color: white;
+    cursor: pointer;
 }
 
-.amarelo {
-    color: #D9A557;
-}
 
-.div_rodape {
+.moments {
     display: flex;
     padding-top: 10px;
     align-items: center;
     justify-content: center;
     justify-items: center;
-    font-size: 10px;
 }
 
-.div_rodape a {
-    text-decoration: none;
-    color: #0461CF;
+.moments p{
+    font-size: 13px;
+    font-weight: 500;
 }
+
+
+/*DIV - ERROS*/
+.erro{
+    font-size: 11px;
+    color: firebrick;
+}
+

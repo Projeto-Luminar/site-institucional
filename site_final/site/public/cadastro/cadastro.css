@@ -106,7 +106,7 @@ nav a:hover {
 }
 
 .btn-login:hover {
-    border: solid 3px #fffa86
+    border: solid 3px #FAF9FF;
 }
 
 .btn-cadastro {
@@ -123,9 +123,10 @@ nav a:hover {
     text-align: center;
 }
 
-.btn-cadastro:hover {
+.btn-cadastro:hover{
     background-color: #000235;
-    color: #FFFA86;
+    background-color: #FAF9FF;
+    border: solid 3px #FAF9FF;
 }
 
 .container-nome-e-sobrenome {

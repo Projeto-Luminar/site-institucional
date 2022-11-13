@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="./icones/luz.png" type="image/x-icon">
+    <link rel="stylesheet" href="./cadastro_oficial.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-luminar">
+            <div class="logo-luminar">
+                <a href="/index.html">
+                    <img src="./icones/logoLuminar.png" alt="Logo Luminar" width="160px" />
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#servicos_redirecionar">Serviços</a></li>
+                    <li><a href="../index.html#sobrenos1">Sobre Nós</a></li>
+                    <li><a href="../index.html#fale-conosco">Fale Conosco</a></li>
+                </ul>
+            </nav>
+            <div class="btn-login-cadastro">
+                <a href="../login/login.html" class="btn-login">Fazer Login</a>
+                <a href="../cadastro/cadastro.html" class="btn-cadastro"><b>Cadastre-se</b></a>
+            </div>
+        </div>
+        <div class="linha-header">
+        </div>
+    </header>
+
+    <div class="container_cadastro">
+        <div class="box_cad">
+            <div class="box_left">
+                <div class="texto_box_left">
+                    <h2>Crie uma conta <b>Gratuita!</b></h2>
+                    <p>Cadastre-se para ter acesso aos nossos serviços!</p>
+                </div>
+                <div class="img_box">
+                    <img src="./icones/Vector.png" alt="">
+                </div>
+                <h3 class="frase-experiencia"> Sua melhor expêriencia começa aqui!</h3>
+            </div>
+
+            <div class="form_box">
+                <div class="dados-empresa">
+                    <p>Preencha os dados da sua empresa:</p>
+                </div>
+                <div class="input_group">
+                    <label for="input_nome_empresa"> Nome da empresa <b>*</b></label>
+                    <input type="text" name="nome_empresa" id="input_nome_empresa"
+                        placeholder="Digite o nome da empresa">
+                </div>
+
+                <div class="telefone-cnpj">
+                    <div class="input_group cnpj">
+                        <label for="input_cnpj">CNPJ <b>*</b></label>
+                        <input type="text" name="cnpj" id="input_cnpj" placeholder="XX.XXX.XXX/0001-XX">
+                        <div class="erro" id="div_erro_cnpj"></div>
+                    </div>
+                    <div class="input_group telefone">
+                        <label for="input_telefone">Telefone <b>*</b></label>
+                        <input type="text" name="telefone" id="input_telefone" placeholder="(XX)9XXXX-XXXX">
+                        <div class="erro" id="div_erro_telefone"></div>
+                    </div>
+                </div>
+
+                <div class="cep-numero">
+                    <div class="input_group cep">
+                        <label for="input_cep">CEP <b>*</b></label>
+                        <input type="text" name="cep" id="input_cep" placeholder="XXXXX-XXX">
+                        <div class="erro" id="div_erro_cep"></div>
+                    </div>
+
+                    <div class="input_group  numero">
+                        <label for="input_numero_endereco">Número <b>*</b></label>
+                        <input type="number" name="Numero" id="input_numero_endereco" placeholder="Número do endereço">
+                    </div>
+                </div>
+
+                <div class="dados-funcionario">
+                    <p>Preencha os seus dados cadastrais:</p>
+                </div>
+
+                <div class="input_group ">
+                    <label for="input_nome">Nome <b>*</b></label>
+                    <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="input_group">
+                    <label for="input_email">E-mail <b>*</b></label>
+                    <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                </div>
+
+                <div class="erro" id="div_erro_email"></div>
+
+                <div class="senha-confirmacaoSenha">
+                    <div class="input_group senha">
+                        <label for="input_senha">Senha <b>*</b></label>
+                        <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                        <div class="erro" id="div_erro_senha"></div>
+                    </div>
+                    <div class="input_group confirmacao-senha">
+                        <label for="input_confirmacao_senha">Confirme sua senha<b>*</b></label>
+                        <input type="password" name="senha" id="input_confirmacao_senha"
+                            placeholder="Digite sua senha novamente">
+                        <div class="erro" id="div_erro_confirm_senha"></div>
+                    </div>
+                </div>
+
+                <div class="input_group">
+                    <button onclick="enviar()">
+                        Enviar
+                    </button>
+                </div>
+                <div class="moments">
+                    <p>Já tem uma conta? <a href="../login/login.html">Faça seu login<p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function enviar() {
+        var nome_empresa = input_nome_empresa.value
+        var cnpj = input_cnpj.value
+        var telefone = input_telefone.value;
+        var cep = input_cep.value;
+        var numero_endereco = input_numero_endereco.value;
+
+        var nome = input_nome.value;
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var confirm_senha = input_confirmacao_senha.value;
+
+        if (nome_empresa == "" || cnpj == "" || telefone == "" || cep == "" || numero_endereco == "" || nome == "" || email == "" || senha == "" || confirm_senha == "") {
+            alert("Preencha todos os campos!");
+        }
+        else if(cnpj.length == 18 && telefone.length == 14 && cep.indexOf('-') && cep.length == 9 && email.indexOf("@") && email.indexOf("sptech.school") && senha.length >= 8 && confirm_senha == senha){
+            alert("Cadastro realizado com sucesso!")
+        }
+        else {
+            if (cnpj.length != 18) {
+                div_erro_cnpj.innerHTML = "CNPJ inválido! Digite novamente."
+            }
+
+            if (telefone.length != 14) {
+                div_erro_telefone.innerHTML = "Telefone inválido! Digite novamente."
+            }
+
+            if (cep.indexOf('-') == -1 || cep.length != 9) {
+                div_erro_cep.innerHTML = "CEP inválido! Digite novamente."
+            }
+
+            if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
+                div_erro_email.innerHTML = "E-mail inválido! Digite novamente."
+            }
+
+            if (senha.length < 8) {
+                div_erro_senha.innerHTML = "Senha muito curta! Digite uma senha com mais de 8 caracteres."
+            }
+
+            if (confirm_senha != senha) {
+                div_erro_confirm_senha.innerHTML = "Senha inválida! Digite a mesma senha já informada."
+            }
+        }
+
+    }
+</script>
