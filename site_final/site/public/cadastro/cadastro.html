@@ -300,30 +300,23 @@ function verificar_nome() {
         // Recuperando o valor do ID da INPUT
         // Após isso ir ao método FETCH abaixo
         var nomeVar = nome_input.value;
-        var sobrenomeVar = sobrenome_input.value;
         var telefoneVar = telefone_input.value;
-        var cpfVar = cpf_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
         var nome_empresaVar = nome_empresa_input.value;
         var cnpjVar = cnpj_input.value;
-        var ruaVar = rua_input.value;
         var cepVar = cep_input.value;
         var numeroVar = numero_input.value;
-        var cidadeVar = cidade_input.value;
-        var estadoVar = estado_input.value;
 
 
-        if (nomeVar == "" || sobrenomeVar == "" || telefoneVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || ruaVar == "" || cepVar == "" || numeroVar == "" || cidadeVar == "" || estadoVar == "") {
+        if (nomeVar == "" || telefoneVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || cepVar == "" || numeroVar == "") {
             
             alert(`Preeencha todos os campos!`);
 
             return false;
         } else if (nomeVar.length <= 3) {
             alert("O nome deve ter mais de 2 caracteres");
-        } else if (sobrenomeVar.length < 3) {
-            alert("O sobrenome deve ter mais de 2 caracteres");
         } else if (emailVar.indexOf("@") == -1 || (emailVar.indexOf("sptech.school") == -1 && emailVar.indexOf(".com") == -1 && emailServer.indexOf(".com.br") == -1)) {
             alert("E-mail inválido!");
         } else if (senhaVar.length < 8) {
@@ -334,13 +327,11 @@ function verificar_nome() {
             alert("O número deve conter 12 dígitos e '-9' após o DDD")
         } else if (cnpjVar.indexOf("0001-") == -1 || cnpjVar.length > 15 && cnpjVar.length <= 15) {
             alert("O CNPJ deve conter 14 dígitos e '0001-' antes dos dois dígitos finais.");
-        } else if (cpfVar.indexOf("-") == -1 || cpfVar.length > 12 && cpfVar.length <= 12) {
-            alert('O CPF deve conter 11 dígitos e um - antes dos dois dígitos finais.')
         } else if (cepVar.indexOf('-') == -1 || cepVar.length > 9 && cepVar.length <= 9) {
             alert('O CEP deve ter 8 dígitos e conter um - antes dos 3 dígitos finais')
         }else {
          // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrarEmpresa", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -349,18 +340,53 @@ function verificar_nome() {
                 // Colocar o nome da variável que foi criada acima
                 // Agora vá para o arquivo routes/usuario.js (EM src)
                 nomeServer: nomeVar,
-                sobrenomeServer: sobrenomeVar,
                 telefoneServer: telefoneVar,
-                cpfServer: cpfVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
                 nome_empresaServer: nome_empresaVar,
                 cnpjServer: cnpjVar,
-                ruaServer: ruaVar,
                 cepServer: cepVar,
-                numeroServer: numeroVar,
-                cidadeServer: cidadeVar,
-                estadoServer: estadoVar
+                numeroServer: numeroVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                nomeServer: nomeVar,
+                telefoneServer: telefoneVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                nome_empresaServer: nome_empresaVar,
+                cnpjServer: cnpjVar,
+                cepServer: cepVar,
+                numeroServer: numeroVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                fetch("/usuarios/cadastrarEndereco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                cepServer: cepVar,
+                numeroServer: numeroVar
             })
         }).then(function (resposta) {
 
@@ -373,7 +399,25 @@ function verificar_nome() {
                 }, "2000")
         
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+                throw ("Houve um erro ao tentar realizar o endereço!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+        
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro da empresa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;   
+        
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro de usuário!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
