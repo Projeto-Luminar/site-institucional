@@ -63,7 +63,6 @@ function entrar(req, res) {
 
 function cadastrarEmpresa(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    
     var nome_empresa = req.body.nome_empresaServer;
     var telefone = req.body.telefoneServer;
     var cnpj = req.body.cnpjServer;
@@ -79,7 +78,7 @@ function cadastrarEmpresa(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarEmpresa(telefone, nome_empresa, cnpj)
+        usuarioModel.cadastrarEmpresa(nome_empresa, telefone, cnpj)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -101,12 +100,12 @@ function cadastrarEmpresa(req, res) {
 
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
+    var nomeUser = req.body.nomeUserServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
     // Faça as validações dos valores
-    if (nome == undefined) {
+    if (nomeUser == undefined) {
         res.status(400).send("Seu nome está undefined!");
     } else if (email == undefined) {    
         res.status(400).send("Seu email está undefined!");
@@ -115,7 +114,7 @@ function cadastrar(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha)
+        usuarioModel.cadastrar(nomeUser, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -143,12 +142,10 @@ function cadastrarEndereco(req, res) {
         res.status(400).send("Seu numero está undefined!");
     } else if (cep == undefined) {    
         res.status(400).send("Seu cep está undefined!");
-    } else if (senha == undefined) {    
-        res.status(400).send("Sua senha está indefinida!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(numero, cep)
+        usuarioModel.cadastrarEndereco(numero, cep)
             .then(
                 function (resultado) {
                     res.json(resultado);

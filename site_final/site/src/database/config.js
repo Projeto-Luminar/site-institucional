@@ -22,7 +22,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "Luminar",
     user: "root",
-    password: "coloca a senha aqui",
+    password: "root",
 };
 
 function executar(instrucao) {

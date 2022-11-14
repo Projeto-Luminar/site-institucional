@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ptbr">
 
 <head>
     <meta charset="UTF-8">
@@ -54,19 +54,19 @@
                 </div>
                 <div class="input_group">
                     <label for="input_nome_empresa"> Nome da empresa <b>*</b></label>
-                    <input type="text" name="nome_empresa" id="input_nome_empresa"
+                    <input onkeyup="verificar_nome_e()" type="text" name="nome_empresa" id="input_nome_empresa"
                         placeholder="Digite o nome da empresa">
                 </div>
 
                 <div class="telefone-cnpj">
                     <div class="input_group cnpj">
                         <label for="input_cnpj">CNPJ <b>*</b></label>
-                        <input type="text" name="cnpj" id="input_cnpj" placeholder="XX.XXX.XXX/0001-XX">
+                        <input onkeyup="verificar_cnpj()" type="text" name="cnpj" id="input_cnpj" placeholder="XXXXXXXX0001-XX">
                         <div class="erro" id="div_erro_cnpj"></div>
                     </div>
                     <div class="input_group telefone">
                         <label for="input_telefone">Telefone <b>*</b></label>
-                        <input type="text" name="telefone" id="input_telefone" placeholder="(XX)9XXXX-XXXX">
+                        <input onkeyup="verificar_telefone()" type="text" name="telefone" id="input_telefone" placeholder="(XX)9XXXXXXXX">
                         <div class="erro" id="div_erro_telefone"></div>
                     </div>
                 </div>
@@ -74,13 +74,13 @@
                 <div class="cep-numero">
                     <div class="input_group cep">
                         <label for="input_cep">CEP <b>*</b></label>
-                        <input type="text" name="cep" id="input_cep" placeholder="XXXXX-XXX">
+                        <input onkeyup="verificar_cep()" type="text" name="cep" id="input_cep" placeholder="XXXXX-XXX">
                         <div class="erro" id="div_erro_cep"></div>
                     </div>
 
                     <div class="input_group  numero">
                         <label for="input_numero_endereco">Número <b>*</b></label>
-                        <input type="number" name="Numero" id="input_numero_endereco" placeholder="Número do endereço">
+                        <input onkeyup="verificar_num_endereco()" type="number" name="Numero" id="input_numero_endereco" placeholder="Número do endereço">
                     </div>
                 </div>
 
@@ -90,12 +90,12 @@
 
                 <div class="input_group ">
                     <label for="input_nome">Nome <b>*</b></label>
-                    <input type="text" name="nome" id="input_nome" placeholder="Digite seu nome completo">
+                    <input onkeyup="verificar_nome()" type="text" name="nome" id="input_nome" placeholder="Digite seu nome completo">
                 </div>
 
                 <div class="input_group">
                     <label for="input_email">E-mail <b>*</b></label>
-                    <input type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
+                    <input onkeyup="verificar_email()" type="text" name="email" id="input_email" placeholder="nome@exemplo.com">
                 </div>
 
                 <div class="erro" id="div_erro_email"></div>
@@ -103,19 +103,19 @@
                 <div class="senha-confirmacaoSenha">
                     <div class="input_group senha">
                         <label for="input_senha">Senha <b>*</b></label>
-                        <input type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
+                        <input onkeyup="verificar_senha()" type="password" name="senha" id="input_senha" placeholder="Digite sua senha">
                         <div class="erro" id="div_erro_senha"></div>
                     </div>
                     <div class="input_group confirmacao-senha">
                         <label for="input_confirmacao_senha">Confirme sua senha<b>*</b></label>
-                        <input type="password" name="senha" id="input_confirmacao_senha"
+                        <input onkeyup="confirmar_senha()" type="password" name="senha" id="input_confirmacao_senha"
                             placeholder="Digite sua senha novamente">
                         <div class="erro" id="div_erro_confirm_senha"></div>
                     </div>
                 </div>
 
                 <div class="input_group">
-                    <button onclick="enviar()">
+                    <button onclick="cadastrar()">
                         Enviar
                     </button>
                 </div>
@@ -131,49 +131,215 @@
 </html>
 
 <script>
-    function enviar() {
-        var nome_empresa = input_nome_empresa.value
-        var cnpj = input_cnpj.value
-        var telefone = input_telefone.value;
-        var cep = input_cep.value;
-        var numero_endereco = input_numero_endereco.value;
+    function verificar_nome() {
+        var nomeServer = input_nome.value;
+        if (nomeServer == "") {
+            document.getElementById("input_nome").style.borderColor = "black"
+        } else if (nomeServer.length >= 3) {
+            document.getElementById("input_nome").style.borderColor = "green"
+        } else {document.getElementById("input_nome").style.borderColor = "red"}
+    }
 
-        var nome = input_nome.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirm_senha = input_confirmacao_senha.value;
+    function verificar_email(){
+        var emailServer = input_email.value;
 
-        if (nome_empresa == "" || cnpj == "" || telefone == "" || cep == "" || numero_endereco == "" || nome == "" || email == "" || senha == "" || confirm_senha == "") {
-            alert("Preencha todos os campos!");
+        if (emailServer == "") {
+            document.getElementById("input_email").style.borderColor = "black"
+        } else if (emailServer.indexOf("@") > -1 && (emailServer.indexOf("sptech.school") > -1 || emailServer.indexOf(".com") > -1 || emailServer.indexOf(".com.br") > -1)) {
+            document.getElementById("input_email").style.borderColor = "green";
+        } else {document.getElementById("input_email").style.borderColor = "red";}
+    }
+
+    function verificar_senha(){
+        var senhaVar = input_senha.value;
+        confirmar_senha()
+
+        if (senhaVar == "") {
+            document.getElementById("input_senha").style.borderColor = "black";
+        } else if (senhaVar.length < 8) {
+            document.getElementById("input_senha").style.borderColor = "red";
+        } else {document.getElementById("input_senha").style.borderColor = "green";}
+    }
+
+    function confirmar_senha() {
+        var senhaVar = input_senha.value;
+        var senha_confirm = input_confirmacao_senha.value;
+
+        if (senha_confirm == "") {
+            document.getElementById("input_confirmacao_senha").style.borderColor = "black";
+        } else if (senhaVar == senha_confirm) {
+            document.getElementById("input_confirmacao_senha").style.borderColor = "green";
+        } else {document.getElementById("input_confirmacao_senha").style.borderColor = "red";}
+    }
+    
+    function verificar_nome_e() {
+        var nome_empresaVar = input_nome_empresa.value;
+        if (nome_empresaVar == "") {
+            document.getElementById("input_nome_empresa").style.borderColor = "black";
+        } else if (nome_empresaVar.length > 2) {
+            document.getElementById("input_nome_empresa").style.borderColor = "green";
+        } else {document.getElementById("input_nome_empresa").style.borderColor = "red";}
+    }
+
+    function verificar_telefone() {
+        var telefoneVar = input_telefone.value;
+        if (telefoneVar == "") {
+            document.getElementById("input_telefone").style.borderColor = "black";
+        } else if (telefoneVar.indexOf("(11)9") > -1 && telefoneVar.length == 13) {
+            document.getElementById("input_telefone").style.borderColor = "green";
+        } else {document.getElementById("input_telefone").style.borderColor = "red";}
+    }
+
+    function verificar_cnpj() {
+        var cnpjVar = input_cnpj.value;
+
+        if (cnpjVar == "") {
+            document.getElementById("input_cnpj").style.borderColor = "black";
+        } else if (cnpjVar.indexOf("0001-") > -1 && cnpjVar.length == 15) {
+            document.getElementById("input_cnpj").style.borderColor = "green";
+        } else {document.getElementById("input_cnpj").style.borderColor = "red";}
+    }
+
+    
+    function verificar_cep() {
+        var cepVar = input_cep.value;
+        if (cepVar == "") {
+            document.getElementById("input_cep").style.borderColor = "black";
+        } else if (cepVar.indexOf('-') > -1 && cepVar.length == 9) {
+            document.getElementById("input_cep").style.borderColor = "green";
+        } else {document.getElementById("input_cep").style.borderColor = "red";}
+    }
+    
+    function verificar_num_endereco() {
+        var num_eVar = input_numero_endereco.value;
+
+        if (num_eVar == "") {
+            document.getElementById("input_numero_endereco").style.borderColor = "black";
+        } else if (num_eVar.length > 1) {
+            document.getElementById("input_numero_endereco").style.borderColor = "green";
+        } else {document.getElementById("input_numero_endereco").style.borderColor = "red";}
+    }
+
+
+    function cadastrar() {
+
+        // Recuperando o valor do ID da INPUT
+        // Após isso ir ao método FETCH abaixo
+        var nomeUserVar = input_nome.value;
+        var telefoneVar = input_telefone.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var confirmacaoSenhaVar = input_confirmacao_senha.value;
+        var nome_empresaVar = input_nome_empresa.value;
+        var cnpjVar = input_cnpj.value;
+        var cepVar = input_cep.value;
+        var numero_enderecoVar = input_numero_endereco.value;
+
+
+        if (nomeUserVar == "" || telefoneVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || nome_empresaVar == "" || cnpjVar == "" || cepVar == "" || numero_enderecoVar == "") {
+            
+            alert(`Preeencha todos os campos!`);
+
+            return false;
+        } else if (nomeUserVar.length <= 3) {
+            alert("O nome deve ter mais de 2 caracteres");
+        } else if (emailVar.indexOf("@") == -1 || (emailVar.indexOf("sptech.school") == -1 && emailVar.indexOf(".com") == -1 && emailServer.indexOf(".com.br") == -1)) {
+            alert("E-mail inválido!");
+        } else if (senhaVar.length < 8) {
+            alert("Sua senha deve ter no mínimo 8 caracteres");
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            alert(`A confirmação de senha está incorreta`);
+        } else if (telefoneVar.indexOf("(11)9") == -1 || telefoneVar.length > 13 && telefoneVar.length <= 13) {
+            alert("O número deve conter 11 dígitos e '-9' após o DDD")
+        } else if (cnpjVar.indexOf("0001-") == -1 || cnpjVar.length > 15 && cnpjVar.length <= 15) {
+            alert("O CNPJ deve conter 14 dígitos e '0001-' antes dos dois dígitos finais.");
+        } else if (cepVar.indexOf('-') == -1 || cepVar.length > 9 && cepVar.length <= 9) {
+            alert('O CEP deve ter 8 dígitos e conter um - antes dos 3 dígitos finais')
+        }else {
+         // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarEmpresa", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                nome_empresaServer: nome_empresaVar,
+                cnpjServer: cnpjVar,
+                telefoneServer: telefoneVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                nomeUserServer: nomeUserVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                fetch("/usuarios/cadastrarEndereco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // Colocar o nome da variável que foi criada acima
+                // Agora vá para o arquivo routes/usuario.js (EM src)
+                cepServer: cepVar,
+                numeroServer: numero_enderecoVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                setTimeout(() => {
+                    window.location = "../login/login.html";
+                }, "2000")
+        
+            } else {
+                throw ("Houve um erro ao tentar realizar o endereço!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+        
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro da empresa!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;   
+        
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro de usuário!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;   
         }
-        else if(cnpj.length == 18 && telefone.length == 14 && cep.indexOf('-') && cep.length == 9 && email.indexOf("@") && email.indexOf("sptech.school") && senha.length >= 8 && confirm_senha == senha){
-            alert("Cadastro realizado com sucesso!")
-        }
-        else {
-            if (cnpj.length != 18) {
-                div_erro_cnpj.innerHTML = "CNPJ inválido! Digite novamente."
-            }
-
-            if (telefone.length != 14) {
-                div_erro_telefone.innerHTML = "Telefone inválido! Digite novamente."
-            }
-
-            if (cep.indexOf('-') == -1 || cep.length != 9) {
-                div_erro_cep.innerHTML = "CEP inválido! Digite novamente."
-            }
-
-            if (email.indexOf("@") == -1 || email.indexOf("sptech.school") == -1) {
-                div_erro_email.innerHTML = "E-mail inválido! Digite novamente."
-            }
-
-            if (senha.length < 8) {
-                div_erro_senha.innerHTML = "Senha muito curta! Digite uma senha com mais de 8 caracteres."
-            }
-
-            if (confirm_senha != senha) {
-                div_erro_confirm_senha.innerHTML = "Senha inválida! Digite a mesma senha já informada."
-            }
-        }
-
     }
 </script>
