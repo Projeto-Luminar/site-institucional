@@ -21,7 +21,6 @@ const AMBIENTE = 'desenvolvimento';
 const serial = async (
     valoresluminosidade1,
     valoresluminosidade2,
-    valoresLuminosidade5,
     valoresluminosidade3,
     valoresluminosidade4
 ) => {
@@ -33,9 +32,9 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'insertGrupo08',
-                password: 'urubu100',
-                database: 'sprint3'
+                user: 'aluno',
+                password: 'sptech',
+                database: 'luminar'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
@@ -65,12 +64,10 @@ const serial = async (
         const luminosidade1 = parseFloat(valores[0]);
         const luminosidade2 = parseFloat(valores[1]);
         const luminosidade3 = parseFloat(valores[2]);
-        const luminosidade5 = parseFloat(valores[3]);
         const luminosidade4 = parseInt(valores[4]);
 
         valoresluminosidade1.push(luminosidade1);
         valoresluminosidade2.push(luminosidade2);
-        valoresLuminosidade5.push(luminosidade5);
         valoresluminosidade3.push(luminosidade3);
         valoresluminosidade4.push(luminosidade4);
 
@@ -81,7 +78,7 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO registro (luminosidade1,luminosidade2, luminosidade3,luminosidade4 , luminosidade5) VALUES (${luminosidade1}, ${luminosidade2}, ${luminosidade5}, ${luminosidade3}, ${luminosidade4}, CURRENT_TIMESTAMP, 1)`;
+                sqlquery = `INSERT INTO registro (luminosidade1,luminosidade2, luminosidade3,luminosidade4 , luminosidade5) VALUES (${luminosidade1}, ${luminosidade2}, ${luminosidade3}, ${luminosidade4}, CURRENT_TIMESTAMP, 1)`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
@@ -90,7 +87,7 @@ const serial = async (
 
                 function inserirComando(conn, sqlquery) {
                     conn.query(sqlquery);
-                    console.log("valores inseridos no banco: ", luminosidade1 + ", " + luminosidade2 + ", " + luminosidade5 + ", " + luminosidade3 + ", " + luminosidade4)
+                    console.log("valores inseridos no banco: ", luminosidade1 + ", " + luminosidade2 + ", " + luminosidade3 + ", " + luminosidade4)
                 }
 
                 sql.connect(connStr)
@@ -105,10 +102,10 @@ const serial = async (
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> você deve ter o aquario de id 1 cadastrado.
                 await poolBancoDados.execute(
-                    'INSERT INTO registro (luminosidade1,luminosidade2, luminosidade3,luminosidade4 , luminosidade5) VALUES (?, ?, ?, ?, ?)',
-                    [luminosidade1, luminosidade2, luminosidade5, luminosidade3, luminosidade4]
+                    'INSERT INTO registro (luminosidade1,luminosidade2, luminosidade3,luminosidade4 , data_hora,fksensor) VALUES (?, ?, ?, ?,now(),1)',
+                    [luminosidade1, luminosidade2,luminosidade3, luminosidade4]
                 );
-                console.log("valores inseridos no banco: ", luminosidade1 + ", " + luminosidade2 + ", " + luminosidade5 + ", " + luminosidade3 + ", " + luminosidade4)
+                console.log("valores inseridos no banco: ", luminosidade1 + ", " + luminosidade2 +  ", " + luminosidade3 + ", " + luminosidade4)
 
             } else {
                 throw new Error('Ambiente não configurado. Verifique o arquivo "main.js" e tente novamente.');
@@ -125,7 +122,6 @@ const serial = async (
 const servidor = (
     valoresluminosidade1,
     valoresluminosidade2,
-    valoresLuminosidade5,
     valoresluminosidade3,
     valoresluminosidade4
 ) => {
@@ -158,20 +154,19 @@ const servidor = (
 (async () => {
     const valoresluminosidade1 = [];
     const valoresluminosidade2 = [];
-    const valoresLuminosidade5 = [];
     const valoresluminosidade3 = [];
     const valoresluminosidade4 = [];
     await serial(
         valoresluminosidade1,
         valoresluminosidade2,
-        valoresLuminosidade5,
+
         valoresluminosidade3,
         valoresluminosidade4
     );
     servidor(
         valoresluminosidade1,
         valoresluminosidade2,
-        valoresLuminosidade5,
+
         valoresluminosidade3,
         valoresluminosidade4
     );
