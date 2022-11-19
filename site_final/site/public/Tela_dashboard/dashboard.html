@@ -127,7 +127,7 @@
   </div>
   </div>
 </body>
-<script>
+<!-- <script>
 
     const labels = [
       '10:00',
@@ -175,7 +175,7 @@
       config1
     )
     </script>
-    
+     -->
   <!-- <--//       var paginacao = {};
 //       var tempo = {};
 //       function obterDados(grafico, endpoint) {
@@ -272,10 +272,10 @@
                 func.innerHTML = sessionStorage.NOME_USUARIO;
               
                  let proximaAtualizacao;
-                  
-                 window.onload = obterDadosGrafico(1);
+                  console.log("chega?")
+                window.onload = obterDadosGrafico(Sensor);
               
-                 verificar_autenticacao();
+                //  verificar_autenticacao();
               
                 //  function alterarTitulo(idAquario) {
                 //      var tituloSensor = document.getElementById("tituloSensor")
@@ -293,20 +293,21 @@
               
                   //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
                   //     Para ajustar o "select", ajuste o comando sql em src/models
-                 function obterDadosGrafico(1) {
-                     alterarTitulo(1)
+                 function obterDadosGrafico(idSensor) {
+                  console.log("chegou?")
+                    //  alterarTitulo(idSensor)
               
                      if (proximaAtualizacao != undefined) {
                          clearTimeout(proximaAtualizacao);
                      }
               
-                     fetch(`/medidas/ultimas/${1}`, { cache: 'no-store' }).then(function (response) {
+                     fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
                          if (response.ok) {
                              response.json().then(function (resposta) {
                                  console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                                  resposta.reverse();
               
-                                 plotarGrafico(resposta, 1);
+                                 plotarGrafico(resposta, idSensor);
                              });
                          } else {
                              console.error('Nenhum dado encontrado ou erro na API');
@@ -330,14 +331,28 @@
                      let dados = {
                          labels: labels,
                          datasets: [{
-                             label: 'luminosidade',
+                             label: 'luminosidade1',
                              data: [],
                              fill: false,
-                             borderColor: 'rgb(75, 192, 192)',
+                             borderColor: 'RED',
                              tension: 0.1
                          },
                           {
-                              label: 'Temperatura',
+                              label: 'luminosidade2',
+                              data: [],
+                              fill: false,
+                              borderColor: 'rgb(199, 52, 52)',
+                              tension: 0.1
+                          },
+                          {
+                              label: 'luminosidade3',
+                              data: [],
+                              fill: false,
+                              borderColor: 'rgb(199, 52, 52)',
+                              tension: 0.1
+                          },
+                          {
+                              label: 'luminosidade4',
                               data: [],
                               fill: false,
                               borderColor: 'rgb(199, 52, 52)',
@@ -345,7 +360,25 @@
                           }
                        ]
                      };
-                  
+    //     /
+    // const labels = [
+    //  
+    // ]
+    // const data = {
+    //   labels: labels,
+    //   datasets: [{
+    //     label: 'Luminosidade | Sensor 1',
+    //     backgroundColor: 'red',
+    //     borderColor: '#FF1616',
+    //     data: [500, 500, 480, 700, 750, 600],
+    //   },
+    //   }
+    // {
+    //     label: 'Luminosidade| Sensor 4',
+    //     backgroundColor: '#FFFF00',
+    //     borderColor: '#FFFF00',
+    //     data: [500, 500, 600, 500, 600, 500],
+    //   }
                      console.log('----------------------------------------------')
                      console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
                      console.log(resposta)
@@ -354,8 +387,10 @@
                      for (i = 0; i < resposta.length; i++) {
                          var registro = resposta[i];
                          labels.push(registro.momento_grafico);
-                         dados.datasets[0].data.push(registro.umidade);
-                          dados.datasets[1].data.push(registro.temperatura);
+                         dados.datasets[0].data.push(registro.luminosidade1);
+                          dados.datasets[1].data.push(registro.luminosidade2);
+                          dados.datasets[2].data.push(registro.luminosidade3);
+                          dados.datasets[3].data.push(registro.luminosidade4);
                      }
                   
                      console.log('----------------------------------------------')
@@ -367,19 +402,20 @@
                      console.log('----------------------------------------------')
                   
                       // Criando estrutura para plotar gráfico - config
-                     const config = {
+                     const config1 = {
                          type: 'line',
                          data: dados,
                      };
               
                       // Adicionando gráfico criado em div na tela
                      let myChart = new Chart(
-                         document.getElementById('myChart'),
-                         config
+                         document.getElementById('myChart1'),
+                         config1
                      );
               
-                     setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+                     setTimeout(() => atualizarGrafico(Sensor, dados, myChart), 2000);
                  }
+                 console.log("veio ate aqui?")
               
               
                   // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
@@ -387,22 +423,25 @@
               
                       // Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
                       // Para ajustar o "select", ajuste o comando sql em src/models
-                 function atualizarGrafico(idAquario, dados, myChart) {
+                 function atualizarGrafico(idSensor, dados, myChart)
+                  {
+                    console.log("veio ate aqui?")
               
-                     fetch(`/medidas/tempo-real/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+                     fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
                          if (response.ok) {
                              response.json().then(function (novoRegistro) {
+                              
               
                                  console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                                  console.log(`Dados atuais do gráfico:`);
                                  console.log(dados);
-              
-                                 document.getElementById("avisoCaptura").innerHTML = ""
+         
+                                //  document.getElementById("avisoCaptura").innerHTML = ""
               
                                  if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                                      console.log("---------------------------------------------------------------")
                                      console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                                     document.getElementById("avisoCaptura").innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                                    //  document.getElementById("avisoCaptura").innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                                      console.log("Horário do novo dado capturado:")
                                      console.log(novoRegistro[0].momento_grafico)
                                      console.log("Horário do último dado capturado:")
@@ -414,21 +453,26 @@
                                      dados.labels.push(novoRegistro[0].momento_grafico); //  incluir um novo momento
               
                                      dados.datasets[0].data.shift();   //apagar o primeiro de umidade
-                                     dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
-              <!---->
-                                     dados.datasets[1].data.shift();  //  <!-- apagar o primeiro de temperatura -->
-                                     dados.datasets[1].data.push(novoRegistro[0].temperatura); // <!-- incluir uma nova medida de temperatura -->
+                                     dados.datasets[0].data.push(novoRegistro[0].luminosidade1); // incluir uma nova medida de umidade
               
+                                     dados.datasets[1].data.shift();  //  <!-- apagar o primeiro de temperatura -->
+                                     dados.datasets[1].data.push(novoRegistro[0].luminosidade2); // <!-- incluir uma nova medida de temperatura -->
+
+                                     dados.datasets[2].data.shift();  //  <!-- apagar o primeiro de temperatura -->
+                                     dados.datasets[2].data.push(novoRegistro[0].luminosidade3); // <!-- incluir uma nova medida de temperatura -->
+
+                                     dados.datasets[3].data.shift();  //  <!-- apagar o primeiro de temperatura -->
+                                     dados.datasets[3].data.push(novoRegistro[0].luminosidade4); // <!-- incluir uma nova medida de temperatura -->
                                      myChart.update();
                                  }
               
                                   // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+                                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idSensor, dados, myChart), 2000);
                              });
                          } else {
                              console.error('Nenhum dado encontrado ou erro na API');
                               // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                             proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
+                             proximaAtualizacao = setTimeout(() => atualizarGrafico(idSensor, dados, myChart), 2000);
                          }
                      })
                          .catch(function (error) {
