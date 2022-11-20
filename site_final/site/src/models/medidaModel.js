@@ -1,6 +1,6 @@
 var database = require("../database/config");
-
-function buscarUltimasMedidas(idAquario, limite_linhas) {
+const idSensor = 1
+function buscarUltimasMedidas( limite_linhas) {
 
     instrucaoSql = ''
 
@@ -15,11 +15,11 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
-        luminosidade1,luminosidade2,lumininosidade3,luminosidade4
+        luminosidade1,luminosidade2,luminosidade3,luminosidade4,
                         data_hora,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    from  
-                      order by id desc limit ${limite_linhas}`;
+                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
+                    from  registro where fkSensor =${idSensor}
+                    order by idregistro desc limit 1;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -29,7 +29,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal() {
 
     instrucaoSql = ''
 
@@ -39,17 +39,16 @@ function buscarMedidasEmTempoReal(idAquario) {
         dht11_umidade as umidade,  
                         CONVERT(varchar, momento, 108) as momento_grafico, 
                         fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
+                        from medida where fkSensor = ${idSensor} 
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc limit 1`;
+        luminosidade1,luminosidade2,luminosidade3,luminosidade4,
+                        data_hora,
+                        DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
+                    from  registro where fkSensor =${idSensor}
+                    order by idregistro desc limit 1;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

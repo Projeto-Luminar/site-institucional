@@ -4,11 +4,11 @@ function buscarUltimasMedidas(req, res) {
 
     const limite_linhas = 7;
 
-    // var idAquario = req.params.idAquario;
+     var idSensor = req.params.idSensor;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
-    medidaModel.buscarUltimasMedidas(1, limite_linhas).then(function (resultado) {
+    medidaModel.buscarUltimasMedidas(idSensor, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -24,7 +24,7 @@ function buscarUltimasMedidas(req, res) {
 
 function buscarMedidasEmTempoReal(req, res) {
 
-    var sensor = req.params.1;
+     var sensor = req.params.idSensor;
 
     console.log(`Recuperando medidas em tempo real`);
 
