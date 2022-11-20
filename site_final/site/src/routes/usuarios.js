@@ -20,6 +20,10 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 })
 
+router.post("/cadastrarNovoFunc", function (req, res) {
+    usuarioController.cadastrarNovoFunc(req, res);
+})
+
 router.post("/cadastrarEndereco", function (req, res) {
     usuarioController.cadastrarEndereco(req, res);
 })

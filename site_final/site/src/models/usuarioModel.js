@@ -12,7 +12,7 @@ function listar() {
 function entrar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucao = `
-        SELECT * FROM usuario WHERE email = '${email}' AND senha = '${senha}';
+        SELECT * FROM usuario WHERE email = '${email}' AND senha = md5('${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -58,7 +58,7 @@ function cadastrar(nomeUser, email, senha) {
     // insert into endereco (rua, cep, numero, cidade, estado) values ('${rua}', '${cep}', '${numero}', '${cidade}', '${estado}');
 
     var instrucao = `
-        INSERT INTO usuario (nome, email, senha, tipo, fkEmpresa) VALUES ('${nomeUser}', '${email}', '${senha}','admin', (SELECT max(idempresa) FROM empresa));        
+        INSERT INTO usuario (nome, email, senha, tipo, fkEmpresa) VALUES ('${nomeUser}', '${email}', md5('${senha}'),'admin', (SELECT max(idempresa) FROM empresa));        
         `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -85,10 +85,24 @@ function cadastrarEndereco(numero, cep) {
     return database.executar(instrucao);
 }
 
+function cadastrarNovoFunc(nomeUser, email, senha, tipo, fkempresa) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeUser, email, senha);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+
+    var instrucao = `
+        INSERT INTO usuario VALUES (null, '${nomeUser}', '${email}', md5('${senha}'), '${tipo}', ${fkempresa});        
+        `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     entrar,
     cadastrar,
     cadastrarEmpresa,
     cadastrarEndereco,
     listar,
+    cadastrarNovoFunc
 };

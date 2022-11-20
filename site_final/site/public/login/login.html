@@ -79,14 +79,11 @@
 </html>
 <script>
     function entrar() {
-
-
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert ("(Mensagem de erro para todos os campos em branco)");
-            finalizarAguardar();
+            alert ("Erro ao realizar login, verifique seus dados e tente novamente.");
             return false;
         }
         else {
@@ -114,11 +111,14 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idusuario;
+                    sessionStorage.FK_EMPRESA = json.fkempresa;
+                    sessionStorage.TIPO = json.tipo;
+
 
                     setTimeout(function () {
                         window.location = "../Tela_dashboard/home_dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+                    }); // apenas para exibir o loading
 
                 });
 

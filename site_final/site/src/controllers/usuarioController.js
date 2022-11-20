@@ -163,11 +163,48 @@ function cadastrarEndereco(req, res) {
     }
 }
 
+function cadastrarNovoFunc(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nomeUser = req.body.nomeServer;
+    var email = req.body.emailServer;
+    var senha = req.body.senhaServer;
+    var tipo = req.body.tipoServer;
+    var fkempresa = req.body.fkempresaServer;
+
+    // Faça as validações dos valores
+    if (nomeUser == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (email == undefined) {    
+        res.status(400).send("Seu email está undefined!");
+    } else if (senha == undefined) {    
+        res.status(400).send("Sua senha está indefinida!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrarNovoFunc(nomeUser, email, senha, tipo, fkempresa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     entrar,
     cadastrar,
     cadastrarEmpresa,
     cadastrarEndereco,
     listar,
-    testar
+    testar,
+    cadastrarNovoFunc
 }

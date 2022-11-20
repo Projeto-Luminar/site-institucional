@@ -37,10 +37,9 @@
                 </a>
                 <div class="itens-perfil">
                     <p>Empresa: XXXX</p>
-                    <p>Funcionário: XXXX</p>
+                    <p id="p_usuario">Funcionário: </p>
                     <!-- (admin ou comum) -->
-                    <p>Permissão: XXXX</p>
-                    <p>Andar: XXXX</p>
+                    <p id="p_permissao">Permissão: </p>
                 </div>
             </div>
         </div>
@@ -115,6 +114,11 @@
 </html>
 
 <script>
+
+p_usuario.innerHTML += sessionStorage.NOME_USUARIO;
+p_permissao.innerHTML += sessionStorage.TIPO;
+
+
     function cadastrar(){
         var nome = input_nome.value;
         var email = input_email.value;
@@ -122,6 +126,13 @@
         var confirmar_senha = input_confirm_senha.value;
         var admin_validar = admin.checked;
         var comum_validar = comum.checked;
+        var fkempresa = sessionStorage.FK_EMPRESA;
+        var tipo = false;
+        if (admin_validar == true) {
+            tipo = "admin"
+        } else if (comum_validar == true) {
+            tipo = "funcionário"
+        }
 
        if(nome == "" || email == "" || senha == "" || confirmar_senha == ""|| admin_validar == false && comum_validar == false){
         alert('Atenção! Todos os campos precisam estar preenchidos')
@@ -133,6 +144,36 @@
         alert('Senha inválida! Digite a mesma senha já informada.')
        }else{
         
-       }
+        fetch("/usuarios/cadastrarNovoFunc", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nome,
+                emailServer: email,
+                senhaServer: senha,
+                tipoServer: tipo,
+                fkempresaServer: fkempresa
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                alert(`Cadastro realizado com sucesso!`)
+                
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
     }
+}
 </script>
