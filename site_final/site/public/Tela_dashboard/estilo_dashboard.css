@@ -90,6 +90,9 @@
     }
 
     .btn-cadastrar-usuários{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         background-color: #FFFA86;
         border: solid 1px #FFFA86;
@@ -99,13 +102,15 @@
       
       .btn-cadastrar-usuários a{
         color:#000235;
-        padding: 1px 2px 0 15px;
         font-size: 15px;
         font-weight: 500;
         text-align: center;
       }
       
       .btn-cadastrar-salas{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         background-color: #8181D7;
         border: solid 1px #8181D7;
@@ -115,7 +120,7 @@
       
       .btn-cadastrar-salas a{
         color:#000235;
-        padding: 1px 2px 0 35px;
+       
         font-size: 15px;
         font-weight: 500;
         text-align: center;
