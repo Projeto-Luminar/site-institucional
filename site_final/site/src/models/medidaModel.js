@@ -11,6 +11,8 @@ function buscarUltimasMedidas( limite_linhas) {
                         DATE_FORMAT(data_hora,'%H:%i:%s') as momento_grafico
                     from  registro where fkSensor =${idSensor}
                     order by idregistro desc limit 7;`;
+
+                    // select luminosidade1, luminosidade2, luminosidade3, luminosidade4, FORMAT(data_hora, 'hh:mm:ss') as data_hora FROM registro;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 
         luminosidade1,luminosidade2,luminosidade3,luminosidade4,
@@ -39,6 +41,12 @@ function buscarMedidasEmTempoReal() {
                         fk_aquario 
                         from medida where fkSensor = ${idSensor} 
                     order by id desc`;
+
+                    // select top 1
+                    // luminosidade1,luminosidade2,luminosidade3,luminosidade4,
+                    //          FORMAT(data_hora,'%H:%i:%s') as momento_grafico
+                    //          from  registro where fkSensor = ${idSensor}
+                    //          order by idregistro desc;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select 

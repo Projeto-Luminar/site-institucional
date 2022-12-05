@@ -78,7 +78,7 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO registro (luminosidade1,luminosidade2, luminosidade3,luminosidade4 , luminosidade5) VALUES (${luminosidade1}, ${luminosidade2}, ${luminosidade3}, ${luminosidade4}, CURRENT_TIMESTAMP, 1)`;
+                sqlquery = `INSERT INTO registro (luminosidade1, luminosidade2, luminosidade3, luminosidade4, data_hora, fksensor) VALUES (${luminosidade1}, ${luminosidade2}, ${luminosidade3}, ${luminosidade4}, CURRENT_TIMESTAMP, 1)`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
